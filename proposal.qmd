@@ -24,6 +24,10 @@ library(tidyverse)
 
 -   Write a brief description of the observations.
 
+    This data set specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this graph. The trends and patterns of each country through the years 1995-2020, such as the growth of the sector economy and decrease of the agriculture sector, are also displayed. Additionally, this data is a factual representation of the economic growth and did not pose a threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.
+
+-   
+
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
@@ -68,9 +72,13 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC\'s definition of crime: \'\'unlawful death purposefully inflicted on a person by another person.\" This data is updated every 5 years with the first publication being in 2005.
+    This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.
 
 -   Write a brief description of the observations.
+
+    The United Nations released this data set in order to provide information about intentional homicides and other crimes around many countries. The data provides information about the gender of the victims of homicides and the occurrence of kidnapping, theft, robbery, and sexual violence through the years 2005-2020. This information is critical to understanding the major crime patterns through the last 2 decades. Additionally, there is an ethical concern that this data may serve to desensitize these crimes while also leading to the exclusion of other crimes that are equally as relevant; however, it is a necessary issue that societies must measure in order to ensure the safety of their citizens.
+
+-   
 
 ## Research question
 
@@ -107,6 +115,8 @@ land_un <- read.csv("data/Land_UN_Altered.csv")
     This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.
 
 -   Write a brief description of the observations.
+
+    The data set details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Since this data is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.
 
 ## Research question
 
