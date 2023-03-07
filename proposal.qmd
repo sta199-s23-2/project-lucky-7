@@ -26,25 +26,25 @@ library(tidyverse)
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-Based on agriculture, industry, and services, how has the Gross Value Added changed for Central and Latin American countries between 1995 and 2020? 
+Based on agriculture, industry, and services, how has the Gross Value Added changed for Central and Latin American countries between 1995 and 2020?
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-Since our dataset states the gross value added (GVA) of all countries, we wanted to focus on a particular region within the world, in this case, Central and Latin America, particularly because they had changes to their economies due to the Latin American Boom in the twentieth century. By analyzing the GVA changes throughout time, we will be able to analyze how countries\' economies have changed and what this says about the wealth of the economy at the time. Our hypothesis is that due to the Latin American Boom, most Central and Latin American countries\' GVA generally increased over time.
+Since our dataset states the gross value added (GVA) of all countries, we wanted to focus on a particular region within the world, in this case, Central and Latin America, particularly because they had changes to their economies due to the Latin American Boom in the twentieth century. By analyzing the GVA changes throughout time, we will be able to analyze how countries' economies have changed and what this says about the wealth of the economy at the time. Our hypothesis is that due to the Latin American Boom, most Central and Latin American countries' GVA generally increased over time.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-The types of variables in our research question are categorical ordinal because the columns are dates. 
+The types of variables in our research question are categorical ordinal because the columns are dates.
 
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
-Brenes, Esteban R., Arnoldo R. Camacho, Luciano Ciravegna, and Caleb A. Pichardo. \"Strategy and Innovation in Emerging Economies after the End of the Commodity Boom---Insights from Latin America.\" Journal of Business Research 69, no. 10 (February 1, 2016): 4363--67. https://doi.org/10.1016/j.jbusres.2016.03.059. 
+Brenes, Esteban R., Arnoldo R. Camacho, Luciano Ciravegna, and Caleb A. Pichardo. "Strategy and Innovation in Emerging Economies after the End of the Commodity Boom---Insights from Latin America." Journal of Business Research 69, no. 10 (February 1, 2016): 4363--67. https://doi.org/10.1016/j.jbusres.2016.03.059.
 
 -   Provide a one paragraph summary about the article.
 
-The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America\'s positive economic performance between the 1990s and 2010s, which aligns perfectly with the UN data set. Moreover, the article offers insights into Latin America\'s emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, providing an opportunity to exchange empirical research results about the strategic economy.
+The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America's positive economic performance between the 1990s and 2010s, which aligns perfectly with the UN data set. Moreover, the article offers insights into Latin America's emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, providing an opportunity to exchange empirical research results about the strategic economy.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
