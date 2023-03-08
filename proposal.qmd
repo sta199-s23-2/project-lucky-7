@@ -32,11 +32,11 @@ library(tidyverse)
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-Based on agriculture, industry, and services, how has the Gross Value Added changed for Central and Latin American countries between 1995 and 2020?
+**How has the composition of Central and Latin American economies changed compared to SE Asia economies between 1995-2020? Does this explain why SE Asia economies have outpaced and outperformed Latin American ones since the 1980s?**
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-Since our dataset states the gross value added (GVA) of all countries, we wanted to focus on a particular region within the world, in this case, Central and Latin America, particularly because they had changes to their economies due to the Latin American Boom in the twentieth century. By analyzing the GVA changes throughout time, we will be able to analyze how countries' economies have changed and what this says about the wealth of the economy at the time. Our hypothesis is that due to the Latin American Boom, most Central and Latin American countries' GVA generally increased over time.
+**In the early 1960s, Latin America\'s per capita income was more than double that of East Asia, and yet today the region lags significantly behind. On the other hand, several East Asian countries that started from low levels of income 50 years ago (South Korea, Singapore, Taiwan, and Hong Kong) have become developed nations. According to the IMF, no country in Latin America can be named developed, although a few are higher-middle income. We believe that the composition of Latin American economies, conceptualized through breakdowns of their gross value added (GVA), has some explanatory power as to why these regions experienced such drastic differences in economic growth. We hypothesize that Latin American countries have economies that are agriculturaly rooted in nature while East Asian countries have more flexible service-based economies associated with developed economies.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -62,6 +62,12 @@ Our research question builds on the article we have cited because it provides di
 #| label: load-data-1
 
 gva_un <- read.csv("data/GVA_Altered.csv")
+
+glimpse(gva_un)
+
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
+
+glimpse(gdp_un)
 ```
 
 # Data 2
@@ -84,7 +90,11 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+**What kinds of crime have become more common in the past 15 years (2005-2020), both worldwide and regionally? Is the world becoming more or less violent?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+**Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world more safe? As technology and society develops, income inequality has skyrocketed. The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our hypothesis is that, contray to portrayals in media, much of the world is actually becoming less violent, as while economically motivated crimes such as robbery and theft have increased in prevelance, homicides and other violent crimes have decreased in prevelance. We also hypothesis that highly unstable regions of the world are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -101,7 +111,9 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 ```{r}
 #| label: load-data-2
 
-land_un <- read.csv("data/Land_UN_Altered.csv")
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
+
+glimpse(homicides_and_crime_un)
 ```
 
 # Data 3
@@ -122,7 +134,11 @@ land_un <- read.csv("data/Land_UN_Altered.csv")
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+**How has land usage and urbanization in Asia from 2005-2021 affected the environment? Is there a correlation between environmental degradation and land development?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+**The rapid growth of Asian economies has greatly accelerated their respective urbanization processes, particularly in industralizating nations like China. Urbanization results in significant changes in land use and land development and thus has profound impacts on the local climate and ecosystem. Our hypothesis is that as urbanization levels in these countries increase, we will see large decreases in the amounts of land protected for biodiversity concerns and amount of forested land.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -139,5 +155,11 @@ land_un <- read.csv("data/Land_UN_Altered.csv")
 ```{r}
 #| label: load-data-3
 
-homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
+land_un <- read.csv("data/Land_UN_Altered.csv")
+
+glimpse(land_un)
+
+urban_un <- read.csv("data/Population Growth Rates_CCity_Urban_Rural_UN_Altered.csv")
+
+glimpse(urban_un)
 ```
