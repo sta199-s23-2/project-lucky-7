@@ -18,39 +18,43 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
+    **United Nations.**
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    This data was originally curated  by the United Nations Statistics Division (UNSD) and published in the National Accounts Main Aggregates Database. The contents of the data set are based on the official data reported to the UNSD through the National Accounts Questionnaire by the countries included beginning in 1970. The UNSD supplemented the data set with estimates for countries and years with incomplete or inconsistent information.
+    **This data was originally curated by the United Nations Statistics Division (UNSD) and published in the National Accounts Main Aggregates Database. The contents of the data set are based on the official data reported to the UNSD through the National Accounts Questionnaire by the countries included beginning in 1970. The UNSD supplemented the data set with estimates for countries and years with incomplete or inconsistent information.**
 
 -   Write a brief description of the observations.
+
+    **This data set specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this graph. The trends and patterns of each country through the years 1995-2020, such as the growth of the sector economy and decrease of the agriculture sector, are also displayed. Additionally, this data is a factual representation of the economic growth and did not pose a threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-Based on agriculture, industry, and services, how has the Gross Value Added changed for Central and Latin American countries between 1995 and 2020?
+**How has the composition of Central and Latin American economies changed compared to SE Asia economies between 1995-2020? Does this explain why SE Asia economies have outpaced and outperformed Latin American ones since the 1980s?**
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-Since our dataset states the gross value added (GVA) of all countries, we wanted to focus on a particular region within the world, in this case, Central and Latin America, particularly because they had changes to their economies due to the Latin American Boom in the twentieth century. By analyzing the GVA changes throughout time, we will be able to analyze how countries' economies have changed and what this says about the wealth of the economy at the time. Our hypothesis is that due to the Latin American Boom, most Central and Latin American countries' GVA generally increased over time.
+**In the early 1960s, Latin America's per capita income was more than double that of East Asia, and yet today the region lags significantly behind. On the other hand, several East Asian countries that started from low levels of income 50 years ago (South Korea, Singapore, Taiwan, and Hong Kong) have become developed nations. According to the IMF, no country in Latin America can be named developed, although a few are higher-middle income. We believe that the composition of Latin American economies, conceptualized through breakdowns of their gross value added (GVA), has some explanatory power as to why these regions experienced such drastic differences in economic growth. We hypothesize that Latin American countries have economies that are agriculturaly rooted in nature while East Asian countries have more flexible service-based economies associated with developed economies.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-The types of variables in our research question are categorical ordinal because the columns are dates.
+**The types of variables in our research question are categorical ordinal because the columns are dates.**
 
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
-Brenes, Esteban R., Arnoldo R. Camacho, Luciano Ciravegna, and Caleb A. Pichardo. "Strategy and Innovation in Emerging Economies after the End of the Commodity Boom---Insights from Latin America." Journal of Business Research 69, no. 10 (February 1, 2016): 4363--67. https://doi.org/10.1016/j.jbusres.2016.03.059.
+**Brenes, Esteban R., Arnoldo R. Camacho, Luciano Ciravegna, and Caleb A. Pichardo. "Strategy and Innovation in Emerging Economies after the End of the Commodity Boom---Insights from Latin America." Journal of Business Research 69, no. 10 (February 1, 2016): 4363--67. https://doi.org/10.1016/j.jbusres.2016.03.059.**
 
 -   Provide a one paragraph summary about the article.
 
-The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America's positive economic performance between the 1990s and 2010s, which aligns perfectly with the UN data set. Moreover, the article offers insights into Latin America's emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, providing an opportunity to exchange empirical research results about the strategic economy.
+**The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America's positive economic performance between the 1990s and 2010s, which aligns perfectly with the UN data set. Moreover, the article offers insights into Latin America's emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, providing an opportunity to exchange empirical research results about the strategic economy.**
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-Our research question builds on the article we have cited because it provides direct empirical evidence relating to the context offered by the conference in Latin America (discussed by the article).
+**Our research question builds on the article we have cited because it provides direct empirical evidence relating to the context offered by the conference in Latin America (discussed by the article).**
 
 ## Glimpse of data
 
@@ -58,6 +62,12 @@ Our research question builds on the article we have cited because it provides di
 #| label: load-data-1
 
 gva_un <- read.csv("data/GVA_Altered.csv")
+
+glimpse(gva_un)
+
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
+
+glimpse(gdp_un)
 ```
 
 # Data 2
@@ -66,17 +76,29 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 
 -   Identify the source of the data.
 
+    **United Nations.**
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+<<<<<<< HEAD
     This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.
+=======
+    **This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.**
+>>>>>>> 3e396da8c22c3a26c099f553caf2c40bcb8ea12e
 
 -   Write a brief description of the observations.
+
+    **The United Nations released this data set in order to provide information about intentional homicides and other crimes around many countries. The data provides information about the gender of the victims of homicides and the occurrence of kidnapping, theft, robbery, and sexual violence through the years 2005-2020. This information is critical to understanding the major crime patterns through the last 2 decades. Additionally, there is an ethical concern that this data may serve to desensitize these crimes while also leading to the exclusion of other crimes that are equally as relevant; however, it is a necessary issue that societies must measure in order to ensure the safety of their citizens.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+**What kinds of crime have become more common in the past 15 years (2005-2020), both worldwide and regionally? Is the world becoming more or less violent?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+**Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world more safe? As technology and society develops, income inequality has skyrocketed. The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our hypothesis is that, contray to portrayals in media, much of the world is actually becoming less violent, as while economically motivated crimes such as robbery and theft have increased in prevelance, homicides and other violent crimes have decreased in prevelance. We also hypothesis that highly unstable regions of the world are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -84,16 +106,24 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    **Asongu, Simplice, and Paul Acha-Anyi. \"The Murder Epidemic: A Global Comparative Study.\" SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
+
 -   Provide a one paragraph summary about the article.
 
+    **This article, published on behalf of Georgia State University, builds on literature from policy and academic research to determine which region of the world is leading when it comes to persistence in homicides between the period 2010 to 2015. Based on the evidence, the region with the highest evidence of persistence in homicides is sub-Saharan Africa, followed by Latin America, the Middle East, and North Africa. Given such information, this article considers the policy implications and factors that caused these issues globally, such as crime, political instability, and weapons. These reasons give contextual information as to why global homicide rates are as they are.**
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+    **Our research question builds on the article we cited because it provides empirical evidence illustrating the specific type of crime or homicide occurring based on country.**
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-2
 
-land_un <- read.csv("data/Land_UN_Altered.csv")
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
+
+glimpse(homicides_and_crime_un)
 ```
 
 # Data 3
@@ -102,17 +132,25 @@ land_un <- read.csv("data/Land_UN_Altered.csv")
 
 -   Identify the source of the data.
 
+    **United Nations.**
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.
+    **This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.**
 
 -   Write a brief description of the observations.
+
+    **The data set details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Since this data is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.**
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
+**How has land usage and urbanization in Asia from 2005-2021 affected the environment? Is there a correlation between environmental degradation and land development?**
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+**The rapid growth of Asian economies has greatly accelerated their respective urbanization processes, particularly in industrialized nations like China. Urbanization results in significant changes in land use and land development and thus has profound impacts on the local climate and ecosystem. Our hypothesis is that as urbanization levels in these countries increase, we will see large decreases in the amounts of land protected for biodiversity concerns and amount of forested land.**
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
@@ -120,14 +158,26 @@ land_un <- read.csv("data/Land_UN_Altered.csv")
 
 -   Find one published credible article on the topic you are interested in researching.
 
+**Wan, Guanghu, and Chen Wang. \"Unprecedented Urbanisation in Asia and Its Impacts on the Environment.\" Australian Economic Review 47, no. 3 (September 1, 2014): 378--85. https://doi.org/10.1111/1467-8462.12076.** 
+
 -   Provide a one paragraph summary about the article.
 
+**This article assesses the relationship between urbanization, industrialization, and the environment in Asian countries. Specifically, it contains context relating to how Asia, with over half of the global urban population, has grown faster than any other region. The article describes that urbanization is a cause of environmental degradation in Asia. Finally, the article considers implications for the issue, offering policy insights as to how to solve the environmental challenge in this area.** 
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+**Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia\'s land usage may have changed over time.**
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-3
 
-homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
+land_un <- read.csv("data/Land_UN_Altered.csv")
+
+glimpse(land_un)
+
+urban_un <- read.csv("data/Population Growth Rates_CCity_Urban_Rural_UN_Altered.csv")
+
+glimpse(urban_un)
 ```
