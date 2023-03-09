@@ -68,7 +68,7 @@ gva_un <- read.csv("data/GVA_Altered.csv")
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC\'s definition of crime: \'\'unlawful death purposefully inflicted on a person by another person.\" This data is updated every 5 years with the first publication being in 2005.
+    This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.
 
 -   Write a brief description of the observations.
 
