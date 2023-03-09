@@ -26,7 +26,7 @@ library(tidyverse)
 
 -   Write a brief description of the observations.
 
-    **This data set specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this graph. The trends and patterns of each country through the years 1995-2020, such as the growth of the sector economy and decrease of the agriculture sector, are also displayed. Additionally, this data is a factual representation of the economic growth and did not pose a threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.**
+    **The gva data set specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this graph. The trends and patterns of each country through the years 1995-2020, such as the growth of the sector economy and decrease of the agriculture sector, are also displayed. The gpa data set shows the gap of each country through the years 1995-2020, demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are a factual representation of the economic growth and did not pose a threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.**
 
 ## Research question
 
@@ -80,11 +80,7 @@ glimpse(gdp_un)
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-<<<<<<< HEAD
     This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.
-=======
-    **This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.**
->>>>>>> 3e396da8c22c3a26c099f553caf2c40bcb8ea12e
 
 -   Write a brief description of the observations.
 
@@ -102,11 +98,13 @@ glimpse(gdp_un)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
+    **The types of variables in our research question are categorical ordinal because the columns are dates.**
+
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
-    **Asongu, Simplice, and Paul Acha-Anyi. \"The Murder Epidemic: A Global Comparative Study.\" SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
+    **Asongu, Simplice, and Paul Acha-Anyi. "The Murder Epidemic: A Global Comparative Study." SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
 
 -   Provide a one paragraph summary about the article.
 
@@ -140,10 +138,13 @@ glimpse(homicides_and_crime_un)
 
 -   Write a brief description of the observations.
 
-    **The data set details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Since this data is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.**
+    **The land data details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Additionally, the urban data display the growth of the urban population through the years 2005-2018 along with how much of the population lived in an urban setting. Throughout the data, it is clear that urbanization has been growing in countries around the world, with few exceptions. Since these data set is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.**
 
-## Research question
+    Research question
 
+```{=html}
+<!-- -->
+```
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
 **How has land usage and urbanization in Asia from 2005-2021 affected the environment? Is there a correlation between environmental degradation and land development?**
@@ -154,11 +155,13 @@ glimpse(homicides_and_crime_un)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
+    **The types of variables in our research question are categorical ordinal because the columns are dates.**
+
 ## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
-**Wan, Guanghu, and Chen Wang. \"Unprecedented Urbanisation in Asia and Its Impacts on the Environment.\" Australian Economic Review 47, no. 3 (September 1, 2014): 378--85. https://doi.org/10.1111/1467-8462.12076.** 
+**Wan, Guanghu, and Chen Wang. "Unprecedented Urbanisation in Asia and Its Impacts on the Environment." Australian Economic Review 47, no. 3 (September 1, 2014): 378--85. https://doi.org/10.1111/1467-8462.12076.** 
 
 -   Provide a one paragraph summary about the article.
 
@@ -166,7 +169,7 @@ glimpse(homicides_and_crime_un)
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-**Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia\'s land usage may have changed over time.**
+**Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia's land usage may have changed over time.**
 
 ## Glimpse of data
 
