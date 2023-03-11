@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project title</title>
+<title>Project Proposal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -157,30 +162,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#data-1" id="toc-data-1" class="nav-link active" data-scroll-target="#data-1">Data 1</a>
   <ul class="collapse">
-  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link" data-scroll-target="#introduction-and-data">Introduction and data</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link" data-scroll-target="#introduction-and-data">Introduction and Data</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
   <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
-  <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of data</a></li>
+  <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of Data</a></li>
   </ul></li>
   <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data 2</a>
   <ul class="collapse">
-  <li><a href="#introduction-and-data-1" id="toc-introduction-and-data-1" class="nav-link" data-scroll-target="#introduction-and-data-1">Introduction and data</a></li>
+  <li><a href="#introduction-and-data-1" id="toc-introduction-and-data-1" class="nav-link" data-scroll-target="#introduction-and-data-1">Introduction and Data</a></li>
   <li><a href="#research-question-1" id="toc-research-question-1" class="nav-link" data-scroll-target="#research-question-1">Research question</a></li>
   <li><a href="#literature-1" id="toc-literature-1" class="nav-link" data-scroll-target="#literature-1">Literature</a></li>
-  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
+  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of Data</a></li>
   </ul></li>
   <li><a href="#data-3" id="toc-data-3" class="nav-link" data-scroll-target="#data-3">Data 3</a>
   <ul class="collapse">
-  <li><a href="#introduction-and-data-2" id="toc-introduction-and-data-2" class="nav-link" data-scroll-target="#introduction-and-data-2">Introduction and data</a></li>
-  <li><a href="#research-question-2" id="toc-research-question-2" class="nav-link" data-scroll-target="#research-question-2">Research question</a></li>
+  <li><a href="#introduction-and-data-2" id="toc-introduction-and-data-2" class="nav-link" data-scroll-target="#introduction-and-data-2">Introduction and Data</a>
+  <ul class="collapse">
+  <li><a href="#research-question-2" id="toc-research-question-2" class="nav-link" data-scroll-target="#research-question-2">Research Question</a></li>
+  </ul></li>
   <li><a href="#literature-2" id="toc-literature-2" class="nav-link" data-scroll-target="#literature-2">Literature</a></li>
-  <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of data</a></li>
+  <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of Data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -190,8 +197,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project title</h1>
-<p class="subtitle lead">Proposal</p>
+<h1 class="title">Project Proposal</h1>
+<p class="subtitle lead">3/10/23</p>
 </div>
 
 
@@ -207,115 +214,216 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.2.2</code></pre>
-</div>
 </div>
 <section id="data-1" class="level1">
 <h1>Data 1</h1>
 <section id="introduction-and-data" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
+<h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and Data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p><strong>The United Nations.</strong></p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p><strong>This data was originally curated by the United Nations Statistics Division (UNSD) and published in the National Accounts Main Aggregates Database. The contents of the data set are based on the official data reported to the UNSD through the National Accounts Questionnaire by the countries included beginning in 1970. The UNSD supplemented the data set with estimates for countries and years with incomplete or inconsistent information.</strong></p></li>
+<li><p>Write a brief description of the observations.</p>
+<p><strong>The GVA dataset specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this data as percentages of the overall GVA for a given year. The GVA of each country through the years 1995-2020 in 5 year intervals is recorded in this dataset. The GDP dataset shows the GDP of each country through the years 1995-2020 ( in approx. 5 year intervals), demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are merely factual representations of the economic growth of a given nation and as such did not pose any discernible threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.</strong></p></li>
 </ul>
 </section>
 <section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
 <ul>
 <li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
+</ul>
+<p><strong>How has the composition of Central and Latin American economies changed compared to SE Asia economies between 1995-2020? Does this explain why SE Asia economies have outpaced and outperformed Latin American ones since the 1980s?</strong></p>
+<ul>
 <li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
+</ul>
+<p><strong>In the early 1960s, Latin America’s per capita income was more than double that of East Asia, and yet today the region lags significantly behind. On the other hand, several East Asian countries that started from low levels of income 50 years ago (South Korea, Singapore, Taiwan, and Hong Kong) have become developed nations. According to the IMF, no country in Latin America can be named developed, although a few are higher-middle income. We believe that the composition of Latin American economies, conceptualized through breakdowns of their gross value added (GVA), has some explanatory power as to why these regions experienced such drastic differences in economic growth. We hypothesize that Latin American countries have economies that are agriculturaly rooted in nature while East Asian countries have more flexible service-based economies associated with developed economies.</strong></p>
+<ul>
 <li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
 </ul>
+<p><strong>The types of variables in our research question are categorical ordinal because the columns are dates. This is true for both datasets in question.</strong></p>
 </section>
 <section id="literature" class="level2">
 <h2 class="anchored" data-anchor-id="literature">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li>Find one published credible article on the topic you are interested in researching.</li>
 </ul>
+<p><strong>Brenes, Esteban R., Arnoldo R. Camacho, Luciano Ciravegna, and Caleb A. Pichardo. “Strategy and Innovation in Emerging Economies after the End of the Commodity Boom—Insights from Latin America.” Journal of Business Research 69, no. 10 (February 1, 2016): 4363–67. https://doi.org/10.1016/j.jbusres.2016.03.059.</strong></p>
+<ul>
+<li>Provide a one paragraph summary about the article.</li>
+</ul>
+<p><strong>The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America’s positive economic performance between the 1990s and 2010s, which aligns with the focus of the UN dataset. Moreover, the article offers insights into Latin America’s emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, which is a forum that “provides an opportunity to exchange empirical research results about the strategic economy.”</strong></p>
+<ul>
+<li>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</li>
+</ul>
+<p><strong>Our research question builds on the article we have cited because it provides direct empirical evidence relating to the content of the conference in Latin America (discussed by the article).</strong></p>
 </section>
 <section id="glimpse-of-data" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
+<h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gva_un <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/GVA_Altered.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gva_un)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4,466
+Columns: 6
+$ Region.Country.Area   &lt;int&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, …
+$ Region.Country.Area.1 &lt;chr&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Af…
+$ Year                  &lt;int&gt; 1995, 2005, 2010, 2015, 2018, 2019, 2020, 1995, …
+$ Series                &lt;chr&gt; "Agriculture, hunting, forestry and fishing (% o…
+$ Value                 &lt;dbl&gt; 66.3, 37.3, 33.2, 27.3, 23.2, 27.0, 28.3, 10.6, …
+$ Footnotes             &lt;chr&gt; "Data classified according to ISIC Rev. 4.", "Da…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gdp_un <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/GDP_GDPpC_UN_Altered.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gdp_un)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,786
+Columns: 6
+$ Region.Country.Area &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ X                   &lt;chr&gt; "Total, all countries or areas", "Total, all count…
+$ Year                &lt;int&gt; 1995, 2005, 2010, 2015, 2018, 2019, 2020, 1995, 20…
+$ Series              &lt;chr&gt; "GDP in current prices (millions of US dollars)", …
+$ Value               &lt;chr&gt; "31,247,262", "47,730,924", "66,461,443", "75,133,…
+$ Footnotes           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", ""…</code></pre>
+</div>
 </div>
 </section>
 </section>
 <section id="data-2" class="level1">
 <h1>Data 2</h1>
 <section id="introduction-and-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
+<h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and Data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p><strong>The United Nations.</strong></p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p><strong>This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC’s definition of crime, that being ’’unlawful death purposefully inflicted on a person by another person.” This data is recorded in 5 year intervals with the first publication being in 2005 and the most recent being 2020.</strong></p></li>
+<li><p>Write a brief description of the observations.</p>
+<p><strong>The United Nations released this data set in order to provide information about intentional homicides and other crimes around many countries. The data provides information about the gender of the victims of homicides and the occurrence of kidnapping, theft, robbery, and sexual violence through the years 2005-2020. This information is critical to understanding the major crime patterns through the last 2 decades. Additionally, there is an ethical concern that this data may serve to desensitize these crimes while also leading to the exclusion of other crimes that are equally as relevant; however, it is a necessary issue that societies must measure in order to ensure the safety of their citizens.</strong></p></li>
 </ul>
 </section>
 <section id="research-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-1">Research question</h2>
 <ul>
 <li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
+</ul>
+<p><strong>What kinds of crime have become more common in the past 15 years (2005-2020), both worldwide and regionally? Is the world becoming more or less violent?</strong></p>
+<ul>
 <li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
+</ul>
+<p><strong>Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world more safe? As technology and society develops, income inequality has skyrocketed. The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our hypothesis is that, contray to portrayals in media, much of the world is actually becoming less violent, as while economically motivated crimes such as robbery and theft have increased in prevelance, homicides and other violent crimes have decreased in prevelance. We also hypothesis that highly unstable regions of the world are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics.</strong></p>
+<ul>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<p><strong>The types of variables in our research question are mostly quantitative as they are crime statistics per 100,000 people. The dates column is catogorical ordinal.</strong></p></li>
 </ul>
 </section>
 <section id="literature-1" class="level2">
 <h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><strong>Asongu, Simplice, and Paul Acha-Anyi. “The Murder Epidemic: A Global Comparative Study.” SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.</strong>&nbsp;</p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p><strong>This article, published on behalf of Georgia State University, builds on literature from policy and academic research to determine which region of the world is leading when it comes to persistence in homicides between the period 2010 to 2015. Based on the evidence, the region with the highest evidence of persistence in homicides is sub-Saharan Africa, followed by Latin America, the Middle East, and North Africa. Given such information, this article considers the policy implications and factors that caused these issues globally, such as crime, political instability, and weapons. These reasons give contextual information as to why global homicide rates are as they are.</strong></p></li>
+<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p>
+<p><strong>Our research question builds on the article we cited because it provides empirical evidence illustrating the prevalence of specific types of crime or rates of homicide occurring based on country.</strong></p></li>
 </ul>
 </section>
 <section id="glimpse-of-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
+<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>homicides_and_crime_un <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Homicides_Other_Crimes_UN_Altered.csv"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(homicides_and_crime_un)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4,865
+Columns: 6
+$ Region.Country.Area &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 15…
+$ X                   &lt;chr&gt; "Total, all countries or areas", "Total, all count…
+$ Year                &lt;int&gt; 2005, 2005, 2005, 2010, 2010, 2010, 2015, 2015, 20…
+$ Series              &lt;chr&gt; "Intentional homicide rates per 100,000", "Percent…
+$ Value               &lt;chr&gt; "6.3", "10.1", "2.4", "6.1", "9.7", "2.4", "5.9", …
+$ Footnotes           &lt;chr&gt; "Estimate.", "Estimate.", "Estimate.", "Estimate."…</code></pre>
+</div>
 </div>
 </section>
 </section>
 <section id="data-3" class="level1">
 <h1>Data 3</h1>
 <section id="introduction-and-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
+<h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and Data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p><strong>The United Nations.</strong></p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p><strong>This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons (divided regional units) for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.</strong></p></li>
+<li><p>Write a brief description of the observations.</p>
+<p><strong>The land data details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Additionally, the urban data display the growth of the urban population through the years 2005-2018 along with how much of the population lived in an urban setting. Throughout the data, it is clear that urbanization has been growing in countries around the world, with few exceptions. Since these data set is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.</strong></p></li>
 </ul>
-</section>
-<section id="research-question-2" class="level2">
-<h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
+<section id="research-question-2" class="level3">
+<h3 class="anchored" data-anchor-id="research-question-2">Research Question</h3>
 <ul>
 <li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
 </ul>
+<p><strong>How has land usage and urbanization in Asia from 2005-2021 affected the environment? Is there a correlation between environmental degradation and land development?</strong></p>
+<ul>
+<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
+</ul>
+<p><strong>The rapid growth of Asian economies has greatly accelerated their respective urbanization processes, particularly in industrialized nations like China. Urbanization results in significant changes in land use and land development and thus has profound impacts on the local climate and ecosystem. Our hypothesis is that as urbanization levels in these countries increase, we will see large decreases in the amounts of land protected for biodiversity concerns and amount of forested land.</strong></p>
+<ul>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<ul>
+<li><strong>The types of variables in our research question are mostly quantitative as they are recorded prevalence of certain land features per hectare as well as the relative percentages of these prevalence as a component of the total amount of land. The dates column is catogorical ordinal.</strong></li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="literature-2" class="level2">
 <h2 class="anchored" data-anchor-id="literature-2">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
-<li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
+<li>Find one published credible article on the topic you are interested in researching.</li>
 </ul>
+<p><strong>Wan, Guanghu, and Chen Wang. “Unprecedented Urbanisation in Asia and Its Impacts on the Environment.” Australian Economic Review 47, no. 3 (September 1, 2014): 378–85. https://doi.org/10.1111/1467-8462.12076.</strong>&nbsp;</p>
+<ul>
+<li>Provide a one paragraph summary about the article.</li>
+</ul>
+<p><strong>This article assesses the relationship between urbanization, industrialization, and the environment in Asian countries. Specifically, it contains context relating to how Asia, with over half of the global urban population, has grown faster than any other region. The article describes that urbanization is a cause of environmental degradation in Asia. Finally, the article considers implications for the issue, offering policy insights as to how to solve the environmental challenge in this area.</strong>&nbsp;</p>
+<ul>
+<li>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</li>
+</ul>
+<p><strong>Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia’s land usage may have changed over time.</strong></p>
 </section>
 <section id="glimpse-of-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
+<h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>land_un <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Land_UN_Altered.csv"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(land_un)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,285
+Columns: 6
+$ Region.Country.Area &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ X                   &lt;chr&gt; "Total, all countries or areas", "Total, all count…
+$ Year                &lt;int&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2005, 20…
+$ Series              &lt;chr&gt; "Land area (thousand hectares)", "Arable land (tho…
+$ Value               &lt;chr&gt; "13,020,109", "1,366,253", "145,136", "4,132,183",…
+$ Footnotes           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", ""…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>urban_un <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/Population Growth Rates_CCity_Urban_Rural_UN_Altered.csv"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(urban_un)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4,165
+Columns: 8
+$ Region.Country.Area   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, …
+$ X                     &lt;chr&gt; "Total, all countries or areas", "Total, all cou…
+$ Year                  &lt;int&gt; 2005, 2005, 2005, 2010, 2010, 2010, 2015, 2015, …
+$ Series                &lt;chr&gt; "Urban population (percent)", "Urban population …
+$ Capital.City          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", …
+$ Capital.City.footnote &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", …
+$ Value                 &lt;chr&gt; "49.2", "2.3", "0.3", "51.7", "2.2", "0.2", "53.…
+$ Footnotes             &lt;chr&gt; "", "Data refers to a 5-year period preceding th…</code></pre>
+</div>
 </div>
 
 
@@ -392,7 +500,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
