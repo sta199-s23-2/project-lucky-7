@@ -142,9 +142,8 @@ glimpse(homicides_and_crime_un)
 
     Research question
 
-```{=html}
 <!-- -->
-```
+
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
 **How has land usage and urbanization in Asia from 2005-2021 affected the environment? Is there a correlation between environmental degradation and land development?**
