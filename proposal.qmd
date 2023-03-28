@@ -104,7 +104,7 @@ glimpse(gdp_un)
 
 -   Find one published credible article on the topic you are interested in researching.
 
-    **Asongu, Simplice, and Paul Acha-Anyi. "The Murder Epidemic: A Global Comparative Study." SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
+    **Asongu, Simplice, and Paul Acha-Anyi. "The Murder Epidemic: A Global Comparative Study." SSRN Electronic Journal, 2017. https://doi.org/10.1177/1057567718759584.** 
 
 -   Provide a one paragraph summary about the article.
 
