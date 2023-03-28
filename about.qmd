@@ -7,12 +7,12 @@ editor: visual
 
 This project was developed by Lucky 7 For[ STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
 
--   Team member 1: Ana Martinez is a first-year student majoring in Public Policy and receiving a certificate in Markets and Management. In her free time, Ana likes to bake, go to the gym, and play New York Times puzzles. 
+-   Team member 1: Ana Martinez is a first-year student majoring in Public Policy and receiving a certificate in Markets and Management. In her free time, Ana likes to bake, go to the gym, and play New York Times puzzles.
 
 
 -   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
 
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
+-   Team member 3: Sophia Correderas is a first-year student majoring in Psychology and Political Science.  In her free time, Sophia enjoys rollerblading, singing at karaoke, and shopping.
 
 -   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
 
