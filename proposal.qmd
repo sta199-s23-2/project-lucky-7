@@ -14,11 +14,11 @@ library(tidyverse)
 
 # Data 1
 
-## Introduction and data
+## Introduction and Data
 
 -   Identify the source of the data.
 
-    **United Nations.**
+    **The United Nations.**
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
@@ -26,9 +26,9 @@ library(tidyverse)
 
 -   Write a brief description of the observations.
 
-    **The gva data set specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this graph. The trends and patterns of each country through the years 1995-2020, such as the growth of the sector economy and decrease of the agriculture sector, are also displayed. The gpa data set shows the gap of each country through the years 1995-2020, demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are a factual representation of the economic growth and did not pose a threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.**
+    **The GVA dataset specifies how different sectors of the economy added to overall economic activity. The agriculture, industry, and services sectors of the economy are detailed in this data as percentages of the overall GVA for a given year. The GVA of each country through the years 1995-2020 in 5 year intervals is recorded in this dataset. The GDP dataset shows the GDP of each country through the years 1995-2020 ( in approx. 5 year intervals), demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are merely factual representations of the economic growth of a given nation and as such did not pose any discernible threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.**
 
-## Research question
+## Research Question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
@@ -40,7 +40,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-**The types of variables in our research question are categorical ordinal because the columns are dates.**
+**The types of variables in our research question are categorical ordinal because the columns are dates. This is true for both datasets in question.**
 
 ## Literature
 
@@ -50,13 +50,13 @@ library(tidyverse)
 
 -   Provide a one paragraph summary about the article.
 
-**The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America's positive economic performance between the 1990s and 2010s, which aligns perfectly with the UN data set. Moreover, the article offers insights into Latin America's emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, providing an opportunity to exchange empirical research results about the strategic economy.**
+**The article explores the economic trends in Latin America, highlighting their influences on the strategies and behaviors of different types of businesses. The article offers contextual information about Latin America's positive economic performance between the 1990s and 2010s, which aligns with the focus of the UN dataset. Moreover, the article offers insights into Latin America's emerging markets throughout this time period. The article utilizes information from the Sixth International Conference on Strategic Management in Latin America, which is a forum that "provides an opportunity to exchange empirical research results about the strategic economy."**
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-**Our research question builds on the article we have cited because it provides direct empirical evidence relating to the context offered by the conference in Latin America (discussed by the article).**
+**Our research question builds on the article we have cited because it provides direct empirical evidence relating to the content of the conference in Latin America (discussed by the article).**
 
-## Glimpse of data
+## Glimpse of Data
 
 ```{r}
 #| label: load-data-1
@@ -72,15 +72,15 @@ glimpse(gdp_un)
 
 # Data 2
 
-## Introduction and data
+## Introduction and Data
 
 -   Identify the source of the data.
 
-    **United Nations.**
+    **The United Nations.**
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime: ''unlawful death purposefully inflicted on a person by another person." This data is updated every 5 years with the first publication being in 2005.
+    **This data was originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime, that being ''unlawful death purposefully inflicted on a person by another person." This data is recorded in 5 year intervals with the first publication being in 2005 and the most recent being 2020.**
 
 -   Write a brief description of the observations.
 
@@ -98,7 +98,7 @@ glimpse(gdp_un)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-    **The types of variables in our research question are categorical ordinal because the columns are dates.**
+    **The types of variables in our research question are mostly quantitative as they are crime statistics per 100,000 people. The dates column is catogorical ordinal.**
 
 ## Literature
 
@@ -112,9 +112,9 @@ glimpse(gdp_un)
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-    **Our research question builds on the article we cited because it provides empirical evidence illustrating the specific type of crime or homicide occurring based on country.**
+    **Our research question builds on the article we cited because it provides empirical evidence illustrating the prevalence of specific types of crime or rates of homicide occurring based on country.**
 
-## Glimpse of data
+## Glimpse of Data
 
 ```{r}
 #| label: load-data-2
@@ -126,23 +126,21 @@ glimpse(homicides_and_crime_un)
 
 # Data 3
 
-## Introduction and data
+## Introduction and Data
 
 -   Identify the source of the data.
 
-    **United Nations.**
+    **The United Nations.**
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-    **This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.**
+    **This data was curated by the United Nations Environment Program (UNEP), beginning in 2005. The data included was calculated by the United Nations Statistics Division based on spatial overlap between polygons (divided regional units) for Key Biodiversity Areas from the World Database of Key Biodiversity Areas and polygons for protected areas from the World Database on Protected Areas.**
 
 -   Write a brief description of the observations.
 
     **The land data details the land distribution in several countries and regions in the world. The columns show how many hectares in the country or region is arable land, land used for permanent crops, and forest cover. It also details what percent of the total data is arable land, permanent crops, and forest cover. The last column also shows the percentage of the total lands that are used as sites protected for terrestrial biodiversity. That data also demonstrates the trends of these variables through the years 2005 to 2019. Through this data, the size of the country and the reliance on their economy on agriculture are major factors. Additionally, the urban data display the growth of the urban population through the years 2005-2018 along with how much of the population lived in an urban setting. Throughout the data, it is clear that urbanization has been growing in countries around the world, with few exceptions. Since these data set is a more factual look at the land usage of these countries, there was very little, if any, disturbance to the population of these countries. Given that there is a very objective measure of these countries, there is very little risk of bias or harm to these populations.**
 
-    Research question
-
-<!-- -->
+### Research Question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
@@ -154,7 +152,7 @@ glimpse(homicides_and_crime_un)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-    **The types of variables in our research question are categorical ordinal because the columns are dates.**
+    -   **The types of variables in our research question are mostly quantitative as they are recorded prevalence of certain land features per hectare as well as the relative percentages of these prevalence as a component of the total amount of land. The dates column is catogorical ordinal.**
 
 ## Literature
 
@@ -170,7 +168,7 @@ glimpse(homicides_and_crime_un)
 
 **Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia's land usage may have changed over time.**
 
-## Glimpse of data
+## Glimpse of Data
 
 ```{r}
 #| label: load-data-3
