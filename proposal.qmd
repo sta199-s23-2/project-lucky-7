@@ -102,7 +102,7 @@ glimpse(gdp_un)
 
 -   Find one published credible article on the topic you are interested in researching.
 
-    **Asongu, Simplice, and Paul Acha-Anyi. \"The Murder Epidemic: A Global Comparative Study.\" SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
+    **Asongu, Simplice, and Paul Acha-Anyi. "The Murder Epidemic: A Global Comparative Study." SSRN Electronic Journal, 2017. https://doi.org/10.2139/ssrn.3109974.** 
 
 -   Provide a one paragraph summary about the article.
 
@@ -154,7 +154,7 @@ glimpse(homicides_and_crime_un)
 
 -   Find one published credible article on the topic you are interested in researching.
 
-**Wan, Guanghu, and Chen Wang. \"Unprecedented Urbanisation in Asia and Its Impacts on the Environment.\" Australian Economic Review 47, no. 3 (September 1, 2014): 378--85. https://doi.org/10.1111/1467-8462.12076.** 
+**Wan, Guanghu, and Chen Wang. "Unprecedented Urbanisation in Asia and Its Impacts on the Environment." Australian Economic Review 47, no. 3 (September 1, 2014): 378--85. https://doi.org/10.1111/1467-8462.12076.** 
 
 -   Provide a one paragraph summary about the article.
 
@@ -162,7 +162,7 @@ glimpse(homicides_and_crime_un)
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-**Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia\'s land usage may have changed over time.**
+**Our research question builds on the article we cited because, once again, it offers specific empirical evidence by country on the number of forest coverage and crops in Asia. Using this data, observed throughout a period of time, we can use the UN data as evidence for how Asia's land usage may have changed over time.**
 
 ## Glimpse of data
 
