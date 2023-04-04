@@ -7,4 +7,11 @@ execute:
   echo: true
 ---
 
-Add project writeup here.
+```{r}
+
+library(tidyverse)
+library(tidymodels)
+
+homicides_and_crime_un_2 <- homicides_and_crime_un |>
+  filter(str_detect(homicides_and_crime_un$X, "Total"))
+```
