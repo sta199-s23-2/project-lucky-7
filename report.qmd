@@ -11,6 +11,8 @@ execute:
 
 library(tidyverse)
 library(tidymodels)
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 
 homicides_and_crime_un_2 <- homicides_and_crime_un |>
   filter(str_detect(homicides_and_crime_un$X, "Total"))
