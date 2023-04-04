@@ -12,6 +12,6 @@ This project was developed by Lucky 7 For[STA 199: Introduction to Data Science]
 
 -   Team member 3: Sophia Correderas is a first-year student majoring in Psychology and Political Science. In her free time, Sophia enjoys rollerblading, singing at karaoke, and shopping.
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+-   Team member 4: Cameron Evans is a second-year student majoring in History and Political Science with a minor in Asian and Middle Eastern Studies. In his free time, he enjoys fencing, reading, and spending time with friends.
 
 -   ...
