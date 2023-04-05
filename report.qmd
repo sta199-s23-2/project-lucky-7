@@ -15,5 +15,24 @@ gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
 homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 
 homicides_and_crime_un_2 <- homicides_and_crime_un |>
-  filter(str_detect(homicides_and_crime_un$X, "Total"))
+  filter(str_detect(homicides_and_crime_un$X, "Total")) |>
+  mutate(Value = as.numeric(Value))
+
+model1 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(Value ~ X, data = homicides_and_crime_un_2)
+
+glance(model1)$r.squared
+```
+
+```{r}
+gdp_un_2 <- gdp_un |>
+  filter(str_detect(gdp_un$X, "Total")) |>
+  mutate(Value = as.numeric(Value))
+
+model2 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(Value ~ X, data = gdp_un_2)
+
+glance(model2)$r.squared
 ```
