@@ -108,7 +108,7 @@ NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Series == "Intentional homicide rates per 100,000")
 
 NAmerica_homicides_and_crime_un |>
   ggplot(aes(x = Year, y = Value, group = 1)) +
@@ -131,7 +131,7 @@ LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Series == "Intentional homicide rates per 100,000")
 
 LACarib_homicides_and_crime_un |>
   ggplot(aes(x = Year, y = Value, group = 1)) +
