@@ -143,3 +143,69 @@ LACarib_homicides_and_crime_un |>
     title = "Intentional Homicide Victims in Latin America and the Caribbean"
   )
 ```
+
+```{r}
+#| label: Asia
+
+Asia_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Asia") |>
+  mutate(
+    sex = if_else(
+      str_detect(Series, "Male"), "Male", "Female")
+    ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
+
+Asia_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Asia"
+  )
+```
+
+```{r}
+#| label: Europe
+
+Europe_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Europe") |>
+  mutate(
+    sex = if_else(
+      str_detect(Series, "Male"), "Male", "Female")
+    ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
+
+Europe_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Europe"
+  )
+```
+
+```{r}
+#| label: Oceania
+
+Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Australia and New Zealand" | X == "Polynesia" | X == "Melanesia" | X == "Micronesia") |>
+   mutate(
+    sex = if_else(
+      str_detect(Series, "Male"), "Male", "Female")
+    ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
+
+Oceania_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Oceania"
+  )
+```
