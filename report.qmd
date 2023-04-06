@@ -11,9 +11,42 @@ execute:
 
 library(tidyverse)
 library(tidymodels)
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 
 homicides_and_crime_un_2 <- homicides_and_crime_un |>
-  filter(str_detect(homicides_and_crime_un$X, "Total"))
+  filter(str_detect(homicides_and_crime_un$X, "Total")) |>
+    mutate(Value = as.numeric(Value))
+
+model1 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(Value ~ Year, data = homicides_and_crime_un_2)
+
+glance(model1)$r.squared
+```
+
+```{r}
+gdp_un_2 <- gdp_un |>
+  filter(str_detect(gdp_un$X, "Total")) |>
+  mutate(Value = as.numeric(Value))
+
+model2 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(Value ~ Year, data = gdp_un_2)
+
+glance(model2)$r.squared
+```
+
+```{r}
+homicides_and_crime_un |>
+  filter(X == "Africa") |>
+    mutate(Value = as.numeric(Value))
+  
+model_africa <- linear_reg() |>
+  set_engine("lm") |>
+  fit(Value ~ Year, data = homicides_and_crime_un)
+
+
 ```
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
