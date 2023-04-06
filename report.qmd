@@ -84,11 +84,17 @@ homicides_and_crime_un_sex |>
 ```{r}
 #| label: Africa
 
+Africa_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Africa")
+
 
 ```
 
 ```{r}
 #| label: Northern-America
+
+NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Northern America")
 
 
 ```
@@ -96,6 +102,8 @@ homicides_and_crime_un_sex |>
 ```{r}
 #| label: LA-And-Caribbean
 
+LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Latin America & the Caribbean")
 
 ```
 
