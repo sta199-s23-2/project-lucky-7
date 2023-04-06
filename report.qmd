@@ -81,3 +81,21 @@ homicides_and_crime_un_sex |>
 
 2. Regional Violence, Based on Sex: 
 
+```{r}
+#| label: Africa
+
+
+```
+
+```{r}
+#| label: Northern-America
+
+
+```
+
+```{r}
+#| label: LA-And-Caribbean
+
+
+```
+
