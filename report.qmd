@@ -153,7 +153,7 @@ Asia_homicides_and_crime_un <- homicides_and_crime_un |>
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Series == "Intentional homicide rates per 100,000")
 
 Asia_homicides_and_crime_un |>
   ggplot(aes(x = Year, y = Value, group = 1)) +
@@ -175,7 +175,7 @@ Europe_homicides_and_crime_un <- homicides_and_crime_un |>
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Series == "Intentional homicide rates per 100,000")
 
 Europe_homicides_and_crime_un |>
   ggplot(aes(x = Year, y = Value, group = 1)) +
@@ -192,12 +192,12 @@ Europe_homicides_and_crime_un |>
 #| label: Oceania
 
 Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Australia and New Zealand" | X == "Polynesia" | X == "Melanesia" | X == "Micronesia") |>
+  filter(X == "Oceania") |>
    mutate(
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Series == "Intentional homicide rates per 100,000")
 
 Oceania_homicides_and_crime_un |>
   ggplot(aes(x = Year, y = Value, group = 1)) +
