@@ -7,6 +7,13 @@ execute:
   echo: true
 ---
 
+**Research Project: International Crime**
+Research Question:
+
+What kinds of crime have become more common in the past 15 years (2005-2020), both worldwide and regionally? Is the world becoming more or less violent? Do these rates correlate with regional and national GDPs?
+
+**Insertion of Data:**
+
 ```{r}
 
 library(tidyverse)
@@ -14,16 +21,9 @@ library(tidymodels)
 gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
 homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 
-homicides_and_crime_un_2 <- homicides_and_crime_un |>
-  filter(str_detect(homicides_and_crime_un$X, "Total")) |>
-    mutate(Value = as.numeric(Value))
-
-model1 <- linear_reg() |>
-  set_engine("lm") |>
-  fit(Value ~ Year, data = homicides_and_crime_un_2)
-
-glance(model1)$r.squared
 ```
+
+**R-Squared of Data Set**
 
 ```{r}
 gdp_un_2 <- gdp_un |>
@@ -36,6 +36,7 @@ model2 <- linear_reg() |>
 
 glance(model2)$r.squared
 ```
+**Africa Linear Regression Model:**
 
 ```{r}
 homicides_and_crime_un |>
@@ -50,6 +51,8 @@ model_africa <- linear_reg() |>
 ```
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
+
+1. Worldwide violence, based on sex:
 
 ```{r}
 #| label: worldwide-violence-sex
@@ -75,3 +78,6 @@ homicides_and_crime_un_sex |>
   )
 
 ```
+
+2. Regional Violence, Based on Sex: 
+
