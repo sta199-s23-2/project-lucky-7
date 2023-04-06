@@ -54,15 +54,24 @@ model_africa <- linear_reg() |>
 ```{r}
 #| label: worldwide-violence-sex
 
-homicides_and_crime_un_2 |>
+homicides_and_crime_un_sex <- homicides_and_crime_un_2 |>
   mutate(
     sex = if_else(
       str_detect(Series, "Male"), "Male", "Female")
     ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
+
+homicides_and_crime_un_sex |>
   group_by(sex) |>
   ggplot(aes(x = Year, fill = sex)) +
   geom_bar(
     position = position_dodge2(preserve = "single")
-  ) 
+  ) + 
+  labs(
+    x = "Year",
+    y = "Percentage of Intentional Homicide Victims",
+    title = "Intentional Homicide Victims by Sex",
+    fill = "Sex"
+  )
 
 ```
