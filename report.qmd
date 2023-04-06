@@ -79,14 +79,23 @@ homicides_and_crime_un_sex |>
 
 ```
 
-2. Regional Violence, Based on Sex: 
+2. Regional Violence, General: 
 
 ```{r}
 #| label: Africa
 
 Africa_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Africa")
+  filter(X == "Africa") 
 
+Africa_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Africa"
+  )
 
 ```
 
@@ -94,8 +103,22 @@ Africa_homicides_and_crime_un <- homicides_and_crime_un |>
 #| label: Northern-America
 
 NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Northern America")
+  filter(X == "Northern America") |>
+  mutate(
+    sex = if_else(
+      str_detect(Series, "Male"), "Male", "Female")
+    ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
 
+NAmerica_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in N. America"
+  )
 
 ```
 
@@ -103,7 +126,21 @@ NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
 #| label: LA-And-Caribbean
 
 LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Latin America & the Caribbean")
+  filter(X == "Latin America & the Caribbean") |>
+  mutate(
+    sex = if_else(
+      str_detect(Series, "Male"), "Male", "Female")
+    ) |>
+  filter(Series != "Intentional homicide rates per 100,000")
 
+LACarib_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "% Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Latin America and the Caribbean"
+  )
 ```
 
