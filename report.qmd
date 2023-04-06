@@ -7,8 +7,7 @@ execute:
   echo: true
 ---
 
-**Research Project: International Crime**
-Research Question:
+**Research Project: International Crime** Research Question:
 
 What kinds of crime have become more common in the past 15 years (2005-2020), both worldwide and regionally? Is the world becoming more or less violent? Do these rates correlate with regional and national GDPs?
 
@@ -36,6 +35,7 @@ model2 <- linear_reg() |>
 
 glance(model2)$r.squared
 ```
+
 **Africa Linear Regression Model:**
 
 ```{r}
@@ -52,7 +52,7 @@ model_africa <- linear_reg() |>
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
 
-1. Worldwide violence, based on sex:
+1.  Worldwide violence, based on sex:
 
 ```{r}
 #| label: worldwide-violence-sex
@@ -79,7 +79,7 @@ homicides_and_crime_un_sex |>
 
 ```
 
-2. Regional Violence, General: 
+2.  Regional Violence, General:
 
 ```{r}
 #| label: Africa
@@ -143,4 +143,3 @@ LACarib_homicides_and_crime_un |>
     title = "Intentional Homicide Victims in Latin America and the Caribbean"
   )
 ```
-
