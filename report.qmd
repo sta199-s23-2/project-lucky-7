@@ -83,10 +83,10 @@ model_total <- linear_reg() |>
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
 
-Regional Regressions
+**Regional Regressions**
 
 ```{r}
-#| label: africa-regression&r2
+#| label: africa-regression&r^2
 gdp_un_africa <- gdp_un |>
   filter(Region.Country.Area.GDP == "2") |> 
   filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
@@ -106,6 +106,131 @@ modelafrica <- linear_reg() |>
   fit(ValueGDP ~ Value, data = gdp_current_and_crime_africa)
 
 glance(modelafrica)$r.squared
+```
+
+```{r}
+#| label: northamerica-regression&r^2
+
+gdp_un_northamerica <- gdp_un |>
+  filter(Region.Country.Area.GDP == "21") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_northamerica$ValueGDP <- as.numeric(as.character(gdp_un_northamerica$ValueGDP))
+
+homicides_and_crime_un_northamerica <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "21") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_northamerica <- homicides_and_crime_un_northamerica |> 
+full_join(gdp_un_northamerica, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modelnorthamerica <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_northamerica)
+
+glance(modelnorthamerica)$r.squared
+
+```
+
+```{r}
+#| label: latincarribean-regression&r^2
+
+gdp_un_latincarribean <- gdp_un |>
+  filter(Region.Country.Area.GDP == "419") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_latincarribean$ValueGDP <- as.numeric(as.character(gdp_un_latincarribean$ValueGDP))
+
+homicides_and_crime_un_latincarribean <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "419") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_latincarribean <- homicides_and_crime_un_latincarribean |> 
+full_join(gdp_un_latincarribean, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modellatincarribean <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_latincarribean)
+
+glance(modellatincarribean)$r.squared
+
+```
+
+```{r}
+#| label: asia-regression&r^2
+
+gdp_un_asia <- gdp_un |>
+  filter(Region.Country.Area.GDP == "142") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_asia$ValueGDP <- as.numeric(as.character(gdp_un_asia$ValueGDP))
+
+homicides_and_crime_un_asia <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "142") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_asia <- homicides_and_crime_un_asia |> 
+full_join(gdp_un_asia, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modelasia <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_asia)
+
+glance(modelasia)$r.squared
+
+```
+
+```{r}
+#| label: europe-regression&r^2
+
+gdp_un_europe <- gdp_un |>
+  filter(Region.Country.Area.GDP == "150") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_europe$ValueGDP <- as.numeric(as.character(gdp_un_europe$ValueGDP))
+
+homicides_and_crime_un_europe <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "150") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_europe <- homicides_and_crime_un_europe |> 
+full_join(gdp_un_europe, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modeleurope <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_europe)
+
+glance(modeleurope)$r.squared
+
+```
+
+```{r}
+#| label: oceania-regression&r^2
+
+gdp_un_oceania <- gdp_un |>
+  filter(Region.Country.Area.GDP == "9") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_oceania$ValueGDP <- as.numeric(as.character(gdp_un_oceania$ValueGDP))
+
+homicides_and_crime_un_oceania <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "9") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_oceania <- homicides_and_crime_un_oceania |> 
+full_join(gdp_un_oceania, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modeloceania <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_oceania)
+
+glance(modeloceania)$r.squared
+
 ```
 
 1.  Worldwide violence, based on sex: **(FIXED, EXAMPLE)**
@@ -129,7 +254,7 @@ homicides_and_crime_un_sex |> #most of this straight forward, make sure to inclu
     y = "# of International Homicide Victims (per 100,000 persons)",
     title = "International Homicide Victims* by Sex",
     fill = "Sex", subtitle = "Rate per 100,000 (of given sex's population)",
-    caption = "*Homicides are defined as intentional homicides by this dataset"
+    caption = "*Homicides are defined as intentional homicides by this dataset")
 ```
 
 2.  Regional Violence, General:
