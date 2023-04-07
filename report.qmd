@@ -24,25 +24,10 @@ library(tidymodels)
 gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
 gdp_un <- gdp_un |>
   rename("SeriesGDP" = "Series", "ValueGDP" = "Value", "FootnotesGDP" = "Footnotes", "XGDP" = "X", "Region.Country.Area.GDP" = "Region.Country.Area")
-gdp_un$ValueGDP <- as.numeric(as.character(gdp_un$ValueGDP))
   
 
 homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$Value))
-
-#setting up GDP
-gdp_un_total <- gdp_un |>
-  filter(Region.Country.Area.GDP == "1") |> #region of interest
-  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") #stat of interest
-
-#setting up Crime
-homicides_and_crime_un_total <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-#Splicing
-gdp_current_and_crime_total <- homicides_and_crime_un_total |>
-full_join(gdp_un_total, by = "Year") |> #always by Year
-  filter(!is.na(Region.Country.Area)) #dropping NAs
 ```
 
 **EXAMPLE FOR GETTING DATA FOR REGRESSION**
@@ -52,6 +37,8 @@ full_join(gdp_un_total, by = "Year") |> #always by Year
 gdp_un_total <- gdp_un |>
   filter(Region.Country.Area.GDP == "1") |> #region of interest
   filter(SeriesGDP == "GDP in current prices (millions of US dollars)") #statistic of interest
+  
+gdp_un_total$ValueGDP <- as.numeric(as.character(gdp_un_total$ValueGDP)) #conversion to numeric, NOT WORKING FOR SOME REASON, NEED to find out, is causing NAs
 
 #setting up Crime
 homicides_and_crime_un_total <- homicides_and_crime_un |>
@@ -78,19 +65,15 @@ glance(modeltotal)$r.squared
 **Total Linear Regression Model (With GDP):**
 
 ```{r}
-homicides_and_crime_un |>
-  filter(Region.Country.Area == "2")
-  
-model_africa <- linear_reg() |>
+
+model_total <- linear_reg() |>
   set_engine("lm") |>
-  fit(Value ~ Year, data = homicides_and_crime_un)
-
-
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_total)
 ```
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
 
-1.  Worldwide violence, based on sex:
+1.  Worldwide violence, based on sex: **(FIXED)**
 
 ```{r}
 #| label: worldwide-violence-sex
