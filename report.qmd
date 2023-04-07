@@ -55,6 +55,14 @@ full_join(gdp_un_total, by = "Year") |> #always by Year
 
 **R-Squared of Data Set (Total EXAMPLE)**
 
+modeltotal \<- linear_reg() \|\>
+
+set_engine("lm") \|\>
+
+fit(ValueGDP \~ Value, data = gdp_current_and_crime_total)
+
+glance(modeltotal)\$r.squared
+
 ```{r}
 
 modeltotal <- linear_reg() |>
@@ -74,6 +82,31 @@ model_total <- linear_reg() |>
 ```
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
+
+Regional Regressions
+
+```{r}
+#| label: africa-regression&r2
+gdp_un_africa <- gdp_un |>
+  filter(Region.Country.Area.GDP == "2") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_africa$ValueGDP <- as.numeric(as.character(gdp_un_africa$ValueGDP))
+
+homicides_and_crime_un_africa <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "2") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_africa <- homicides_and_crime_un_africa |> 
+full_join(gdp_un_africa, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modelafrica <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_africa)
+
+glance(modelafrica)$r.squared
+```
 
 1.  Worldwide violence, based on sex: **(FIXED, EXAMPLE)**
 
