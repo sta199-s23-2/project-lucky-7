@@ -21,12 +21,15 @@ execute:
 
 library(tidyverse)
 library(tidymodels)
-gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv")
+replaceCommas<-function(x){
+  x<-as.numeric(gsub("\\,", "", x))}
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", header=TRUE, na.strings = ",")
 gdp_un <- gdp_un |>
   rename("SeriesGDP" = "Series", "ValueGDP" = "Value", "FootnotesGDP" = "Footnotes", "XGDP" = "X", "Region.Country.Area.GDP" = "Region.Country.Area")
-  
+gdp_un$ValueGDP <- replaceCommas(gdp_un$ValueGDP)
+gdp_un$ValueGDP <- as.numeric(as.character(gdp_un$ValueGDP))
 
-homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv", header=TRUE)
 homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$Value))
 ```
 
@@ -62,7 +65,7 @@ modeltotal <- linear_reg() |>
 glance(modeltotal)$r.squared
 ```
 
-**Total Linear Regression Model (With GDP):**
+**Total Linear Regression Model (With GDP) (EXAMPLE):**
 
 ```{r}
 
@@ -92,8 +95,9 @@ homicides_and_crime_un_sex |>
   labs(
     x = "Year",
     y = "% of International Homicide Victims",
-    title = "International Homicide Victims by Sex",
-    fill = "Sex", subtitle = "Rate per 100,000 (of given sex's population)")
+    title = "International Homicide Victims* by Sex",
+    fill = "Sex", subtitle = "Rate per 100,000 (of given sex's population)",
+    caption = "*Homicides are defined as intentional homicides by this dataset")
 ```
 
 2.  Regional Violence, General:
