@@ -75,7 +75,7 @@ model_total <- linear_reg() |>
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
 
-1.  Worldwide violence, based on sex: **(FIXED)**
+1.  Worldwide violence, based on sex: **(FIXED, EXAMPLE)**
 
 ```{r}
 #| label: worldwide-violence-sex
