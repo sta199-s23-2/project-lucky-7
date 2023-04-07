@@ -229,3 +229,11 @@ Oceania_homicides_and_crime_un |>
     title = "Intentional Homicide Victims in Oceania"
   )
 ```
+
+**TBD:**
+
+Regional Regressions
+
+Graph Modifications/Tidying up -- Make em' colorful and nice :)
+
+**Results:**
