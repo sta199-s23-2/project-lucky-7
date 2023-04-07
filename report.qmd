@@ -93,7 +93,7 @@ homicides_and_crime_un_sex |> #most of this straight forward, make sure to inclu
   geom_point() + 
   labs(
     x = "Year",
-    y = "% of International Homicide Victims",
+    y = "# of International Homicide Victims (per 100,000 persons)",
     title = "International Homicide Victims* by Sex",
     fill = "Sex", subtitle = "Rate per 100,000 (of given sex's population)",
     caption = "*Homicides are defined as intentional homicides by this dataset")
