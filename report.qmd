@@ -40,8 +40,7 @@ homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$V
 gdp_un_total <- gdp_un |>
   filter(Region.Country.Area.GDP == "1") |> #region of interest
   filter(SeriesGDP == "GDP in current prices (millions of US dollars)") #statistic of interest
-  
-gdp_un_total$ValueGDP <- as.numeric(as.character(gdp_un_total$ValueGDP)) #conversion to numeric, NOT WORKING FOR SOME REASON, NEED to find out, is causing NAs
+gdp_un_total$ValueGDP <- as.numeric(as.character(gdp_un_total$ValueGDP))
 
 #setting up Crime
 homicides_and_crime_un_total <- homicides_and_crime_un |>
@@ -82,12 +81,12 @@ model_total <- linear_reg() |>
 #| label: worldwide-violence-sex
 
 homicides_and_crime_un_sex <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |>
-  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |>
-  filter(Series != "Intentional homicide rates per 100,000")
+  filter(Region.Country.Area == "1") |> #region of interest
+  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |> #not used elsewhere
+  filter(Series != "Intentional homicide rates per 100,000") #statistic of interest, watch the != vs == for what you want
  
 
-homicides_and_crime_un_sex |>
+homicides_and_crime_un_sex |> #most of this straight forward, make sure to include correct titling/subtitles and caption it
   group_by(sex) |>
   ggplot(aes(x = Year, y = Value, color = sex)) +
   geom_line() +
