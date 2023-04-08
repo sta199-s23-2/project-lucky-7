@@ -7,13 +7,13 @@ execute:
   echo: true
 ---
 
-**Research Project: International Crime**
+# **Research Project: International Crime**
 
-**Introduction:**
+# **Introduction:**
 
 Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world safer? As technology and society develop, income inequality has skyrocketed (**The Hunger Project**). The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our research seeks to answer the following research questions: 
 
-**Research Question(s):**
+# **Research Question(s):**
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally?**
 
@@ -27,26 +27,28 @@ The **homicide and crime data** were originally curated by the United Nations Of
 
 The **GDP data** shows the GDP of each country through the years 1995-2020 ( in approx. 5 year intervals), demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are merely factual representations of the economic growth of a given nation and as such did not pose any discernible threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.
 
-**Data Insertion + Transformation for Analysis:**
+# **Data Insertion + Transformation for Analysis:**
 
 ```{r}
 # | label: data-inseration
 
 library(tidyverse)
 library(tidymodels)
-replaceCommas<-function(x){
-  x<-as.numeric(gsub("\\,", "", x))}
-gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", header = TRUE, na.strings = ",")
+replaceCommas < -function(x)
+  {x<-as.numeric(gsub("\\,", "", x))} #cited
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", na.strings = ",")
 gdp_un <- gdp_un |>
   rename("SeriesGDP" = "Series", "ValueGDP" = "Value", "FootnotesGDP" = "Footnotes", "XGDP" = "X", "Region.Country.Area.GDP" = "Region.Country.Area")
 gdp_un$ValueGDP <- replaceCommas(gdp_un$ValueGDP)
 gdp_un$ValueGDP <- as.numeric(as.character(gdp_un$ValueGDP))
 
-homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv", header = TRUE)
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$Value))
 ```
 
-**Methodology:**
+**Citation:** https://stackoverflow.com/questions/49910861/removing-comma-from-numbers-in-r
+
+# **Methodology:**
 
 For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the second question, we will be using a visualization with gender breakdown **(DRAFT note: can do regionally if needed)**. For the third question, we will be utilizing a series of regressions to determine the level of correlation between homicides and GDP.
 
@@ -241,12 +243,12 @@ glance(modeloceania)$r.squared
 #| label: worldwide-violence-sex
 
 homicides_and_crime_un_sex <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |> #region of interest
-  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |> #not used elsewhere
-  filter(Series != "Intentional homicide rates per 100,000") #statistic of interest, watch the != vs == for what you want
+  filter(Region.Country.Area == "1") |>
+  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |>
+  filter(Series != "Intentional homicide rates per 100,000")
  
 
-homicides_and_crime_un_sex |> #most of this straight forward, make sure to include correct titling/subtitles and caption it
+homicides_and_crime_un_sex |>
   group_by(sex) |>
   ggplot(aes(x = Year, y = Value, color = sex)) +
   geom_line() +
@@ -277,8 +279,8 @@ Global_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims - Global"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims - Global") +
+  theme_bw()
 ```
 
 **Analysis:** It seems that globally, there was a increasingly more steep decline in violence on a 5-year basis, supporting our hypothesis.
@@ -298,8 +300,8 @@ Africa_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Africa"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Africa") +
+  theme_bw()
 ```
 
 **Analysis:** It is evident that Africa experienced a period of decline in regards to homicide in the early 2000s, only to increase beginning in 2010. However, the trend seems to have reversed and the number of homicide victims is declining, albeit at a lower rate.
@@ -311,10 +313,6 @@ Africa_homicides_and_crime_un |>
 
 NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Northern America") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 NAmerica_homicides_and_crime_un |>
@@ -324,9 +322,8 @@ NAmerica_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in N. America"
-  ) + theme_bw()
-
+    title = "Intentional Homicide Victims in N. America") +
+  theme_bw()
 ```
 
 **Analysis:** Homicide victims in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
@@ -338,10 +335,6 @@ NAmerica_homicides_and_crime_un |>
 
 LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Latin America & the Caribbean") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 LACarib_homicides_and_crime_un |>
@@ -351,8 +344,8 @@ LACarib_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Latin America and the Caribbean"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Latin America and the Caribbean") +
+  theme_bw()
 ```
 
 **Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course aand begun to decrease at a steady rate.
@@ -364,10 +357,6 @@ LACarib_homicides_and_crime_un |>
 
 Asia_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Asia") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Asia_homicides_and_crime_un |>
@@ -377,8 +366,8 @@ Asia_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Asia"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Asia") +
+  theme_bw()
 ```
 
 **Analysis:** While homicide victims in Asia has decreased since the first year the data was recorded, it is evident that the declines have gotten steeper as the years have gone on.
@@ -390,10 +379,6 @@ Asia_homicides_and_crime_un |>
 
 Europe_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Europe") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Europe_homicides_and_crime_un |>
@@ -403,8 +388,8 @@ Europe_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Europe"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Europe") +
+  theme_bw()
 ```
 
 **Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have levelled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
@@ -416,10 +401,6 @@ Europe_homicides_and_crime_un |>
 
 Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Oceania") |>
-   mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Oceania_homicides_and_crime_un |>
@@ -429,8 +410,8 @@ Oceania_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Oceania"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Oceania") +
+  theme_bw()
 ```
 
 **Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
