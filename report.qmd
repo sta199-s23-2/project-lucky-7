@@ -15,11 +15,7 @@ Many consider the 21st century as the best time to be human as we are afforded l
 
 # **Research Question(s):**
 
-**Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally?**
-
-**How does sex factor into the results?**
-
-**How do these rates correlate with regional GDPs?**
+**Has the world become more violent in the past 15 years, and if so, how does this breakdown across region? Given this, does GDP correlate with these observations?**
 
 Our **hypothesis** is that contrary to portrayals in media, much of the world is actually becoming less violent. We **also hypothesize** that volatile and unstable regions of the world, whether that be from civil conflict, interstate conflict, eroding rule of law, or political strife, are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics. This research will also allow us to **empirically evaluate** a 1976 Department of Justice claim regarding the often-cited observation that GDP and violent crime are correlated, if only at the macro level. 
 
@@ -50,7 +46,7 @@ homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$V
 
 # **Methodology:**
 
-For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the second question, we will be using a visualization with gender breakdown **(DRAFT note: can do regionally if needed)**. For the third question, we will be utilizing a series of regression models to determine the level of correlation between homicides and GDP via their R\^2 values.
+For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the latter half of our question, we will be utilizing a series of regression models to determine the level of correlation between homicides and GDP via their R\^2 values.
 
 ### **R.3 - Global - R\^2**
 
