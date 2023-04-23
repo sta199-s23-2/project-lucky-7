@@ -7,63 +7,70 @@ execute:
   echo: true
 ---
 
-**Research Project: International Crime** Research Question:
+# **Research Project: International Crime**
+
+# **Introduction:**
+
+Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world safer? As technology and society develop, income inequality has skyrocketed (**The Hunger Project**). The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our research seeks to answer the following research questions: 
+
+# **Research Question(s):**
 
 **Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally?**
 
 **How does sex factor into the results?**
 
-**How do these rates correlate with regional and national GDPs?**
+**How do these rates correlate with regional GDPs?**
 
-**Insertion of Data:**
+Our **hypothesis** is that contrary to portrayals in media, much of the world is actually becoming less violent. We **also hypothesize** that volatile and unstable regions of the world, whether that be from civil conflict, interstate conflict, eroding rule of law, or political strife, are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics. This research will also allow us to **empirically evaluate** a 1976 Department of Justice claim regarding the often-cited observation that GDP and violent crime are correlated, if only at the macro level. 
+
+The **homicide and crime data** were originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime, that being '' the punishable contravention or violation of the limits on human behavior as imposed by national criminal legislation." Homicides are defined as the intentional killing of one person by another by the UN. The data is recorded in 5-year intervals with the first publication being in 2005 and the most recent being 2020. There are ethical concerns resulting from the fact that every one of those millions that make up the statistics of deaths and crime are still personal tragedies.
+
+The **GDP data** shows the GDP of each country through the years 1995-2020 ( in approx. 5 year intervals), demonstrating how many countries have managed to increase their GDP substantially. Additionally, these data sets are merely factual representations of the economic growth of a given nation and as such did not pose any discernible threat to the individuals in these countries. Since no civilian was impacted by the methods used to obtain the data, there are no ethical concerns.
+
+# **Data Insertion + Transformation for Analysis:**
 
 ```{r}
+# | label: data-inseration
 
 library(tidyverse)
 library(tidymodels)
-replaceCommas<-function(x){
-  x<-as.numeric(gsub("\\,", "", x))}
-gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", header=TRUE, na.strings = ",")
+replaceCommas < -function(x)
+  {x<-as.numeric(gsub("\\,", "", x))} #cited
+gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", na.strings = ",")
 gdp_un <- gdp_un |>
   rename("SeriesGDP" = "Series", "ValueGDP" = "Value", "FootnotesGDP" = "Footnotes", "XGDP" = "X", "Region.Country.Area.GDP" = "Region.Country.Area")
 gdp_un$ValueGDP <- replaceCommas(gdp_un$ValueGDP)
 gdp_un$ValueGDP <- as.numeric(as.character(gdp_un$ValueGDP))
 
-homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv", header=TRUE)
+homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$Value))
 ```
 
-**EXAMPLE FOR GETTING DATA FOR REGRESSION**
+**Citation:** https://stackoverflow.com/questions/49910861/removing-comma-from-numbers-in-r
+
+# **Methodology:**
+
+For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the second question, we will be using a visualization with gender breakdown **(DRAFT note: can do regionally if needed)**. For the third question, we will be utilizing a series of regression models to determine the level of correlation between homicides and GDP via their R\^2 values.
+
+### **R.3 - Global - R\^2**
 
 ```{r}
-#setting up GDP
+# | label: total-gdp-homicides
+
 gdp_un_total <- gdp_un |>
-  filter(Region.Country.Area.GDP == "1") |> #region of interest
-  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") #statistic of interest
+  filter(Region.Country.Area.GDP == "1") |>
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)")
 gdp_un_total$ValueGDP <- as.numeric(as.character(gdp_un_total$ValueGDP))
 
-#setting up Crime
+#Crime
 homicides_and_crime_un_total <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |> #region of interest
-  filter(Series == "Intentional homicide rates per 100,000") #statistic of interest
+  filter(Region.Country.Area == "1") |>
+  filter(Series == "Intentional homicide rates per 100,000") 
 
-#Joining them
+#GDP
 gdp_current_and_crime_total <- homicides_and_crime_un_total |> 
-full_join(gdp_un_total, by = "Year") |> #always by Year
-  filter(!is.na(Region.Country.Area)) #dropping NAs
-```
-
-**R-Squared of Data Set (Total EXAMPLE)**
-
-modeltotal \<- linear_reg() \|\>
-
-set_engine("lm") \|\>
-
-fit(ValueGDP \~ Value, data = gdp_current_and_crime_total)
-
-glance(modeltotal)\$r.squared
-
-```{r}
+  full_join(gdp_un_total, by = "Year") |> 
+  filter(!is.na(Region.Country.Area)) 
 
 modeltotal <- linear_reg() |>
   set_engine("lm") |>
@@ -72,21 +79,13 @@ modeltotal <- linear_reg() |>
 glance(modeltotal)$r.squared
 ```
 
-**Total Linear Regression Model (With GDP) (EXAMPLE):**
+### **R.3 - Regional - R\^2**
+
+#### Africa
 
 ```{r}
+#| label: africa-regression&r^2
 
-model_total <- linear_reg() |>
-  set_engine("lm") |>
-  fit(ValueGDP ~ Value, data = gdp_current_and_crime_total)
-```
-
-**Has the world become more violent in the past 15 years (2005-2020), both worldwide and regionally, based on sex?**
-
-Regional Regressions
-
-```{r}
-#| label: africa-regression&r2
 gdp_un_africa <- gdp_un |>
   filter(Region.Country.Area.GDP == "2") |> 
   filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
@@ -108,18 +107,148 @@ modelafrica <- linear_reg() |>
 glance(modelafrica)$r.squared
 ```
 
-1.  Worldwide violence, based on sex: **(FIXED, EXAMPLE)**
+#### North America
+
+```{r}
+#| label: northamerica-regression&r^2
+
+gdp_un_northamerica <- gdp_un |>
+  filter(Region.Country.Area.GDP == "21") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)")
+
+gdp_un_northamerica$ValueGDP <- as.numeric(as.character(gdp_un_northamerica$ValueGDP))
+
+homicides_and_crime_un_northamerica <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "21") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_northamerica <- homicides_and_crime_un_northamerica |> 
+full_join(gdp_un_northamerica, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modelnorthamerica <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_northamerica)
+
+glance(modelnorthamerica)$r.squared
+```
+
+#### Latin America
+
+```{r}
+#| label: latincarribean-regression&r^2
+
+gdp_un_latincarribean <- gdp_un |>
+  filter(Region.Country.Area.GDP == "419") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_latincarribean$ValueGDP <- as.numeric(as.character(gdp_un_latincarribean$ValueGDP))
+
+homicides_and_crime_un_latincarribean <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "419") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_latincarribean <- homicides_and_crime_un_latincarribean |> 
+full_join(gdp_un_latincarribean, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modellatincarribean <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_latincarribean)
+
+glance(modellatincarribean)$r.squared
+```
+
+#### Asia
+
+```{r}
+#| label: asia-regression&r^2
+
+gdp_un_asia <- gdp_un |>
+  filter(Region.Country.Area.GDP == "142") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_asia$ValueGDP <- as.numeric(as.character(gdp_un_asia$ValueGDP))
+
+homicides_and_crime_un_asia <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "142") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_asia <- homicides_and_crime_un_asia |> 
+full_join(gdp_un_asia, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modelasia <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_asia)
+
+glance(modelasia)$r.squared
+```
+
+#### Europe
+
+```{r}
+#| label: europe-regression&r^2
+
+gdp_un_europe <- gdp_un |>
+  filter(Region.Country.Area.GDP == "150") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_europe$ValueGDP <- as.numeric(as.character(gdp_un_europe$ValueGDP))
+
+homicides_and_crime_un_europe <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "150") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_europe <- homicides_and_crime_un_europe |> 
+full_join(gdp_un_europe, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modeleurope <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_europe)
+
+glance(modeleurope)$r.squared
+```
+
+#### Oceania
+
+```{r}
+#| label: oceania-regression&r^2
+
+gdp_un_oceania <- gdp_un |>
+  filter(Region.Country.Area.GDP == "9") |> 
+  filter(SeriesGDP == "GDP in current prices (millions of US dollars)") 
+
+gdp_un_oceania$ValueGDP <- as.numeric(as.character(gdp_un_oceania$ValueGDP))
+
+homicides_and_crime_un_oceania <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "9") |> 
+  filter(Series == "Intentional homicide rates per 100,000")
+
+gdp_current_and_crime_oceania <- homicides_and_crime_un_oceania |> 
+full_join(gdp_un_oceania, by = "Year") |>
+  filter(!is.na(Region.Country.Area))
+
+modeloceania <- linear_reg() |>
+  set_engine("lm") |>
+  fit(ValueGDP ~ Value, data = gdp_current_and_crime_oceania)
+
+glance(modeloceania)$r.squared
+```
+
+### **RQ.2 - Global - By Sex**
 
 ```{r}
 #| label: worldwide-violence-sex
 
 homicides_and_crime_un_sex <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |> #region of interest
-  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |> #not used elsewhere
-  filter(Series != "Intentional homicide rates per 100,000") #statistic of interest, watch the != vs == for what you want
+  filter(Region.Country.Area == "1") |>
+  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |>
+  filter(Series != "Intentional homicide rates per 100,000")
  
 
-homicides_and_crime_un_sex |> #most of this straight forward, make sure to include correct titling/subtitles and caption it
+homicides_and_crime_un_sex |>
   group_by(sex) |>
   ggplot(aes(x = Year, y = Value, color = sex)) +
   geom_line() +
@@ -132,7 +261,31 @@ homicides_and_crime_un_sex |> #most of this straight forward, make sure to inclu
     caption = "*Homicides are defined as intentional homicides by this dataset")
 ```
 
-2.  Regional Violence, General:
+### **RQ.1 - Global +Regional - Homicide Statistics 2005-2020**
+
+#### Global
+
+```{r}
+#| label: Global
+
+Global_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "1") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+Global_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims - Global") +
+  theme_bw()
+```
+
+**Analysis:** It seems that globally, there was a increasingly more steep decline in violence on a 5-year basis, supporting our hypothesis.
+
+#### Africa
 
 ```{r}
 #| label: Africa
@@ -147,22 +300,19 @@ Africa_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Africa"
-  ) + theme_bw()
-
+    title = "Intentional Homicide Victims in Africa") +
+  theme_bw()
 ```
 
-2.  It is evident that Africa experienced a period of decline in regards to homicide in the early 2000s, only to increase beginning in 2010. However, the trend seems to have revered and the number of homicide victims is declining, albeit at a lower rate.
+**Analysis:** It is evident that Africa experienced a period of decline in regards to homicide in the early 2000s, only to increase beginning in 2010. However, the trend seems to have reversed and the number of homicide victims is declining, albeit at a lower rate.
+
+#### North America
 
 ```{r}
 #| label: Northern-America
 
 NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Northern America") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 NAmerica_homicides_and_crime_un |>
@@ -172,22 +322,19 @@ NAmerica_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in N. America"
-  ) + theme_bw()
-
+    title = "Intentional Homicide Victims in N. America") +
+  theme_bw()
 ```
 
-Homicide victimis in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
+**Analysis:** Homicide victims in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
+
+#### **Latin America**
 
 ```{r}
 #| label: LA-And-Caribbean
 
 LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Latin America & the Caribbean") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 LACarib_homicides_and_crime_un |>
@@ -197,21 +344,19 @@ LACarib_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Latin America and the Caribbean"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Latin America and the Caribbean") +
+  theme_bw()
 ```
 
-In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course aand begun to decrease at a steady rate.
+**Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course aand begun to decrease at a steady rate.
+
+#### **Asia**
 
 ```{r}
 #| label: Asia
 
 Asia_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Asia") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Asia_homicides_and_crime_un |>
@@ -221,21 +366,19 @@ Asia_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Asia"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Asia") +
+  theme_bw()
 ```
 
-While homicide victims in Asia has decreased since the first year the data was recorded, it is evident that the declines have gotten steeper as the years have gone on.
+**Analysis:** While homicide victims in Asia has decreased since the first year the data was recorded, it is evident that the declines have gotten steeper as the years have gone on.
+
+#### Europe
 
 ```{r}
 #| label: Europe
 
 Europe_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Europe") |>
-  mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Europe_homicides_and_crime_un |>
@@ -245,21 +388,19 @@ Europe_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Europe"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Europe") +
+  theme_bw()
 ```
 
-Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have leveled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
+**Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have levelled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
+
+#### Oceania
 
 ```{r}
 #| label: Oceania
 
 Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
   filter(X == "Oceania") |>
-   mutate(
-    sex = if_else(
-      str_detect(Series, "Male"), "Male", "Female")
-    ) |>
   filter(Series == "Intentional homicide rates per 100,000")
 
 Oceania_homicides_and_crime_un |>
@@ -269,16 +410,24 @@ Oceania_homicides_and_crime_un |>
   labs(
     x = "Year",
     y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Oceania"
-  ) + theme_bw()
+    title = "Intentional Homicide Victims in Oceania") +
+  theme_bw()
 ```
 
-Oceania saw a steep decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have skyrocketed since 2015.
+**Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
 
-**TBD:**
+# **Results:**
 
-Regional Regressions
+Overall, our findings were the following:
 
-Graph Modifications/Tidying up -- Make em' colorful and nice :)
+**RQ1 - Global and Regional Statistics**
 
-**Results:**
+Based on our initial findings, **our hypothesis is supported** by the UN data. The global homicide rates have been consistently declining on 5-year intervals. Breaking the statistics down regionally, we find that Asia, Europe and Africa are likely responsible for this observation on account of their massive share of the global population. Surprisingly, North America saw a large spike in homicides since 2010, possible on account of the 2008 financial crisis and its impact on the middle class in the US.
+
+**RQ2 - Global - By Sex**
+
+Broken down by sex, it seems that **men are much more likely to be victims of homicide than women**. This is unsurprising, not only due to the known likelihood of men being involved in violent/aggressive activity but especially considering that the global population breakdown is 101.68 men per 100 women as of 2020.
+
+**RQ3 - Regressions - Regional and Global**
+
+Overall, based on our initial findings, **there is mixed correlation between GDP and homicides.** The global homicide and GDP statistics had a very high R\^2 value (0.93). Breaking the statistics down regionally, we find that Asian and European statistics have high R\^2 values, African and Latin American statistics have middling R\^2 values, and Oceanian and North American statistics have very low R\^2 values. These results **call into question** the application of the Justice Department's claim that GDP and violent crime are correlated, but we do lack the full scope of the data needed to fully evaluate the claim.
