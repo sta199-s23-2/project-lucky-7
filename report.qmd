@@ -9,7 +9,7 @@ execute:
 
 # **Research Project: International Crime**
 
-Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code
+Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code (3) Make a table of r-squared values
 
 # **Introduction:**
 
