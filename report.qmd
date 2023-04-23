@@ -9,7 +9,7 @@ execute:
 
 # **Research Project: International Crime**
 
-Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code
+Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code (3) Make a table of r-squared values
 
 # **Introduction:**
 
@@ -389,6 +389,44 @@ Oceania_homicides_and_crime_un |>
 ```
 
 **Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
+
+#### All Regions, Combined
+
+```{r}
+#| label: regions-combined
+
+Total_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Oceania" |
+         X == "Africa" |
+         X == "Europe" |
+         X == "Asia" |
+         X == "Latin America & the Caribbean" |
+         X == "Northern America") |>
+  filter(Series == "Intentional homicide rates per 100,000") |>
+  mutate(Value = as.numeric(Value))
+
+Total_homicides_and_crime_un |>
+  ggplot(aes(
+    x = Year, 
+    y = Value,
+    color = X)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(
+    breaks = c(0,5,10,15,20,25), labels = c(0,5,10,15,20,25)
+    ) +
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Regions, Combined",
+    color = "Region") +
+  theme_bw() +
+  scale_colour_colorblind()
+
+```
+
+**Analysis:**
+
 
 # **Results:**
 
