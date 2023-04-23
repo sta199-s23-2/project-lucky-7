@@ -9,6 +9,8 @@ execute:
 
 # **Research Project: International Crime**
 
+Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code
+
 # **Introduction:**
 
 Many consider the 21st century as the best time to be human as we are afforded luxuries and lifestyles that have never before been so accessible. But is this world safer? As technology and society develop, income inequality has skyrocketed (**The Hunger Project**). The media and news cycle show their viewers a world that is increasingly more dangerous, less safe, and rife with criminal activity. Our research seeks to answer the following research questions: 
@@ -231,30 +233,6 @@ modeloceania <- linear_reg() |>
   fit(ValueGDP ~ Value, data = gdp_current_and_crime_oceania)
 
 glance(modeloceania)$r.squared
-```
-
-### **RQ.2 - Global - By Sex**
-
-```{r}
-#| label: worldwide-violence-sex
-
-homicides_and_crime_un_sex <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |>
-  mutate(sex = if_else(str_detect(Series, "Male"), "Male", "Female")) |>
-  filter(Series != "Intentional homicide rates per 100,000")
- 
-
-homicides_and_crime_un_sex |>
-  group_by(sex) |>
-  ggplot(aes(x = Year, y = Value, color = sex)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "# of International Homicide Victims (per 100,000 persons)",
-    title = "International Homicide Victims* by Sex",
-    fill = "Sex", subtitle = "Rate per 100,000 (of given sex's population)",
-    caption = "*Homicides are defined as intentional homicides by this dataset")
 ```
 
 ### **RQ.1 - Global +Regional - Homicide Statistics 2005-2020**
