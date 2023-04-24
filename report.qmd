@@ -9,7 +9,7 @@ execute:
 
 # **Research Project: International Crime**
 
-Stuff we need to do: (1) Fix the as.factor code for region (2) Comma code (3) Make a table of r-squared values
+Stuff we need to do: Make a table of r-squared values
 
 # **Introduction:**
 
@@ -19,7 +19,7 @@ Many consider the 21st century as the best time to be human as we are afforded l
 
 **Has the world become more violent in the past 15 years, and if so, how does this breakdown across region? Given this, does GDP correlate with these observations?**
 
-Our **hypothesis** is that contrary to portrayals in media, much of the world is actually becoming less violent. We **also hypothesize** that volatile and unstable regions of the world, whether that be from civil conflict, interstate conflict, eroding rule of law, or political strife, are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics. This research will also allow us to **empirically evaluate** a 1976 Department of Justice claim regarding the often-cited observation that GDP and violent crime are correlated, if only at the macro level.Given this claim, we believe that as a region's GDP increases, their rates of violent crimes decrease.  
+Our **hypothesis** is that contrary to portrayals in media, much of the world is actually becoming less violent. We **also hypothesize** that volatile and unstable regions of the world, whether that be from civil conflict, interstate conflict, eroding rule of law, or political strife, are responsible for a large share of the violent crimes and homicides that fold into the worldwide statistics. This research will also allow us to **empirically evaluate** a 1976 Department of Justice claim regarding the often-cited observation that GDP and violent crime are correlated, if only at the macro level. Given this claim, we believe that as a region's GDP increases, their rates of violent crimes decrease.  
 
 The **homicide and crime data** were originally curated by the United Nations Office on Drugs and Crime (ODC) Homicide Statistics. The ODC compiles national and international data on homicide from a variety of sources (including criminal justice and public health systems from the countries included and the World Health Organization) which include data that conform to the ODC's definition of crime, that being '' the punishable contravention or violation of the limits on human behavior as imposed by national criminal legislation." Homicides are defined as the intentional killing of one person by another by the UN. The data is recorded in 5-year intervals with the first publication being in 2005 and the most recent being 2020. There are ethical concerns resulting from the fact that every one of those millions that make up the statistics of deaths and crime are still personal tragedies.
 
@@ -32,8 +32,10 @@ The **GDP data** shows the GDP of each country through the years 1995-2020 ( in 
 
 library(tidyverse)
 library(tidymodels)
-replaceCommas < -function(x)
-  {x<-as.numeric(gsub("\\,", "", x))} #cited
+
+replaceCommas <- function(x)
+  {x <- as.numeric(gsub("\\,", "", x))} #cited
+
 gdp_un <- read.csv("data/GDP_GDPpC_UN_Altered.csv", na.strings = ",")
 gdp_un <- gdp_un |>
   rename("SeriesGDP" = "Series", "ValueGDP" = "Value", "FootnotesGDP" = "Footnotes", "XGDP" = "X", "Region.Country.Area.GDP" = "Region.Country.Area")
@@ -403,7 +405,7 @@ Total_homicides_and_crime_un <- homicides_and_crime_un |>
          X == "Latin America & the Caribbean" |
          X == "Northern America") |>
   filter(Series == "Intentional homicide rates per 100,000") |>
-  mutate(Value = as.numeric(Value))
+  mutate(Value = as.numeric(Value), X = as.factor(X))
 
 Total_homicides_and_crime_un |>
   ggplot(aes(
@@ -421,12 +423,11 @@ Total_homicides_and_crime_un |>
     title = "Intentional Homicide Victims in Regions, Combined",
     color = "Region") +
   theme_bw() +
-  scale_colour_colorblind()
+  scale_color_viridis_d()
 
 ```
 
 **Analysis:**
-
 
 # **Results:**
 
