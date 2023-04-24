@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "International Crime Rates"
 subtitle: "Report"
 format: html
 editor: visual
@@ -8,8 +8,6 @@ execute:
 ---
 
 # **Research Project: International Crime**
-
-Stuff we need to do: Make a table of r-squared values
 
 # **Introduction:**
 
@@ -433,14 +431,10 @@ Total_homicides_and_crime_un |>
 
 Overall, our findings were the following:
 
-**RQ1 - Global and Regional Statistics**
+**Global and Regional Statistics**
 
 Based on our initial findings, **our hypothesis is supported** by the UN data. The global homicide rates have been consistently declining on 5-year intervals. Breaking the statistics down regionally, we find that Asia, Europe and Africa are likely responsible for this observation on account of their massive share of the global population. Surprisingly, North America saw a large spike in homicides since 2010, possible on account of the 2008 financial crisis and its impact on the middle class in the US.
 
-**RQ2 - Global - By Sex**
-
-Broken down by sex, it seems that **men are much more likely to be victims of homicide than women**. This is unsurprising, not only due to the known likelihood of men being involved in violent/aggressive activity but especially considering that the global population breakdown is 101.68 men per 100 women as of 2020.
-
-**RQ3 - Regressions - Regional and Global**
+**Regressions - Regional and Global**
 
 Overall, based on our initial findings, **there is mixed correlation between GDP and homicides.** The global homicide and GDP statistics had a very high R\^2 value (0.93). Breaking the statistics down regionally, we find that Asian and European statistics have high R\^2 values, African and Latin American statistics have middling R\^2 values, and Oceanian and North American statistics have very low R\^2 values. These results **call into question** the application of the Justice Department's claim that GDP and violent crime are correlated, but we do lack the full scope of the data needed to fully evaluate the claim.
