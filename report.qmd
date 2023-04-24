@@ -1,6 +1,6 @@
 ---
 title: "Investigating International Crime Rates"
-subtitle: "Report"
+subtitle: "STA 199 Final Report"
 format: html
 editor: visual
 execute:
