@@ -44,7 +44,7 @@ homicides_and_crime_un <- read.csv("data/Homicides_Other_Crimes_UN_Altered.csv")
 homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$Value))
 ```
 
-**Citation:** https://stackoverflow.com/questions/49910861/removing-comma-from-numbers-in-r
+**Code Citation:** https://stackoverflow.com/questions/49910861/removing-comma-from-numbers-in-r
 
 # **Methodology:**
 
@@ -442,10 +442,10 @@ Overall, based on our initial findings, **there is mixed correlation between GDP
 
 # **Works Cited:**
 
-Derviş, Kemal, and Zia Qureshi. \"Income Distribution within Countries: Rising Inequality.\" Brookings Institution Research, The Brookings Institution, 1 Aug. 2016, [https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality](https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality/).
+Derviş, Kemal, and Zia Qureshi. "Income Distribution within Countries: Rising Inequality." Brookings Institution Research, The Brookings Institution, 1 Aug. 2016, [https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality](https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality/).
 
-\"Gross domestic product and gross domestic product per capita\" UNdata, UN Statistics Division, Mar. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_230_202209_GDP%20and%20GDP%20Per%20Capita.pdf>.
+"Gross domestic product and gross domestic product per capita" UNdata, UN Statistics Division, Mar. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_230_202209_GDP%20and%20GDP%20Per%20Capita.pdf>.
 
-\"Intentional homicides and other crimes\" UNdata, United Nations Office on Drugs and Crime, Jun. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_328_202209_Intentional%20homicides%20and%20other%20crimes.pdf>.
+"Intentional homicides and other crimes" UNdata, United Nations Office on Drugs and Crime, Jun. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_328_202209_Intentional%20homicides%20and%20other%20crimes.pdf>.
 
-Luna, Giuliana et al. \"Economic Crisis and Crime.\" Office of the U.S. Justice Department, United Nations Social Defense Research Institute, 1 Aug. 2016, <https://www.ojp.gov/pdffiles1/Digitization/35597NCJRS.pdf>.
+Luna, Giuliana et al. "Economic Crisis and Crime." Office of the U.S. Justice Department, United Nations Social Defense Research Institute, 1 Aug. 2016, <https://www.ojp.gov/pdffiles1/Digitization/35597NCJRS.pdf>.
