@@ -86,7 +86,7 @@ Total_homicides_and_crime_un |>
 
 **Analysis:**
 
-We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstartes the similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
+We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstrates the similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
 
 ### **R.3 - Global - R\^2**
 
@@ -442,10 +442,10 @@ Overall, based on our initial findings, **there is mixed correlation between GDP
 
 # **Works Cited:**
 
-Derviş, Kemal, and Zia Qureshi. \"Income Distribution within Countries: Rising Inequality.\" Brookings Institution Research, The Brookings Institution, 1 Aug. 2016, [https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality](https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality/).
+Derviş, Kemal, and Zia Qureshi. "Income Distribution within Countries: Rising Inequality." Brookings Institution Research, The Brookings Institution, 1 Aug. 2016, [https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality](https://www.brookings.edu/research/income-distribution-within-countries-rising-inequality/).
 
-\"Gross domestic product and gross domestic product per capita\" UNdata, UN Statistics Division, Mar. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_230_202209_GDP%20and%20GDP%20Per%20Capita.pdf>.
+"Gross domestic product and gross domestic product per capita" UNdata, UN Statistics Division, Mar. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_230_202209_GDP%20and%20GDP%20Per%20Capita.pdf>.
 
-\"Intentional homicides and other crimes\" UNdata, United Nations Office on Drugs and Crime, Jun. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_328_202209_Intentional%20homicides%20and%20other%20crimes.pdf>.
+"Intentional homicides and other crimes" UNdata, United Nations Office on Drugs and Crime, Jun. 2022, <http://data.un.org/_Docs/SYB/PDFs/SYB65_328_202209_Intentional%20homicides%20and%20other%20crimes.pdf>.
 
-Luna, Giuliana et al. \"Economic Crisis and Crime.\" Office of the U.S. Justice Department, United Nations Social Defense Research Institute, 1 Aug. 2016, <https://www.ojp.gov/pdffiles1/Digitization/35597NCJRS.pdf>.
+Luna, Giuliana et al. "Economic Crisis and Crime." Office of the U.S. Justice Department, United Nations Social Defense Research Institute, 1 Aug. 2016, <https://www.ojp.gov/pdffiles1/Digitization/35597NCJRS.pdf>.
