@@ -50,6 +50,44 @@ homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$V
 
 For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the latter half of our question, we will be utilizing a series of regression models to determine the level of correlation between homicides and GDP via their R\^2 values.
 
+#### All Regions, Combined:
+
+```{r}
+#| label: regions-combined
+
+Total_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Oceania" |
+         X == "Africa" |
+         X == "Europe" |
+         X == "Asia" |
+         X == "Latin America & the Caribbean" |
+         X == "Northern America") |>
+  filter(Series == "Intentional homicide rates per 100,000") |>
+  mutate(Value = as.numeric(Value), X = as.factor(X))
+
+Total_homicides_and_crime_un |>
+  ggplot(aes(
+    x = Year, 
+    y = Value,
+    color = X)) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(
+    breaks = c(0,5,10,15,20,25), labels = c(0,5,10,15,20,25)
+    ) +
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Regions, Combined",
+    color = "Region") +
+  theme_bw() +
+  scale_color_viridis_d()
+```
+
+**Analysis:**
+
+We chose to include this graph with all these countries in one visual representation, so it is easier to see the different patterns among countries, as their a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including the Northern America, Oceania, Asia, and Europe. This cluster demonstartes that similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions. However, more detailed patterns are necessary to reject or support our hypothesis. Therefore, the study includes the specific patterns of each country later on.
+
 ### **R.3 - Global - R\^2**
 
 ```{r}
@@ -389,45 +427,6 @@ Oceania_homicides_and_crime_un |>
 ```
 
 **Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
-
-#### All Regions, Combined
-
-```{r}
-#| label: regions-combined
-
-Total_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Oceania" |
-         X == "Africa" |
-         X == "Europe" |
-         X == "Asia" |
-         X == "Latin America & the Caribbean" |
-         X == "Northern America") |>
-  filter(Series == "Intentional homicide rates per 100,000") |>
-  mutate(Value = as.numeric(Value), X = as.factor(X))
-
-Total_homicides_and_crime_un |>
-  ggplot(aes(
-    x = Year, 
-    y = Value,
-    color = X)) +
-  geom_point() +
-  geom_line() +
-  scale_y_continuous(
-    breaks = c(0,5,10,15,20,25), labels = c(0,5,10,15,20,25)
-    ) +
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Regions, Combined",
-    color = "Region") +
-  theme_bw() +
-  scale_color_viridis_d()
-
-```
-
-**Analysis:**
-
-We chose to include this graph with all these countries in one visual representation, so it is easier to see the different patterns among countries with the same scale. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims has significantly higher than all other regions. Near the booton of the graph, there is a cluster of regions, including the Northern America, Oceania, Asia, and Europe. Africa is seen in the midle of graph, with its homicide rate remaining pretty constant compared to all other regions.
 
 # **Results:**
 
