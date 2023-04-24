@@ -13,5 +13,3 @@ This project was developed by Lucky 7 For [STA 199: Introduction to Data Science
 -   Sophia Correderas is a first-year student majoring in Psychology and Political Science. In her free time, Sophia enjoys rollerblading, singing at karaoke, and shopping.
 
 -   Cameron Evans is a second-year student and Duke NCAA Men's Fencer majoring in History and Political Science with a minor in Asian and Middle Eastern Studies. In his free time, he enjoys fencing, reading, and spending time with friends.
-
--   ...
