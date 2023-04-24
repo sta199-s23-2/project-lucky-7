@@ -86,7 +86,7 @@ Total_homicides_and_crime_un |>
 
 **Analysis:**
 
-We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstartes the similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
+We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstrates the similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
 
 ### **R.3 - Global - R\^2**
 
