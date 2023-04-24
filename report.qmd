@@ -1,13 +1,11 @@
 ---
-title: "International Crime Rates"
+title: "Investigating International Crime Rates"
 subtitle: "Report"
 format: html
 editor: visual
 execute:
-  echo: true
+  echo: false
 ---
-
-# **Research Project: International Crime**
 
 # **Introduction:**
 
