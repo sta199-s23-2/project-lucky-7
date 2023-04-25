@@ -436,7 +436,17 @@ Based on our initial findings, **our hypothesis is supported** by the UN data. T
 
 **Regressions - Regional and Global**
 
-Overall, based on our initial findings, **there is mixed correlation between GDP and homicides.** The global homicide and GDP statistics had a very high R\^2 value (0.93). Breaking the statistics down regionally, we find that Asian and European statistics have high R\^2 values, African and Latin American statistics have middling R\^2 values, and Oceanian and North American statistics have very low R\^2 values. These results **call into question** the application of the Justice Department's claim that GDP and violent crime are correlated, but we do lack the full scope of the data needed to fully evaluate the claim.
+| Region          | GDP Regression - R\^2 Value (0-1): |
+|-----------------|------------------------------------|
+| *Global*        | **0.935**                          |
+| *Africa*        | **0.602**                          |
+| *North America* | **0.135**                          |
+| *Latin America* | **0.689**                          |
+| *Asia*          | **0.948**                          |
+| *Europe*        | **0.975**                          |
+| *Oceania*       | **0.099**                          |
+
+Overall, based on our initial findings, **there is mixed correlation between GDP and homicides.** The global homicide and GDP statistics had a very high R\^2 value (0.93). Breaking the statistics down regionally, we find that Asian and European statistics have high R\^2 values, African and Latin American statistics have middling R\^2 values, and Oceanian and North American statistics have very low R\^2 values. The numeric values are visible in the table above. These results **call into question** the application of the UN's claim that GDP and violent crime are correlated, but we do lack the full scope of the data needed to fully evaluate the claim, such as yearly crime and GDP statistics. Thus, we cannot definitely evaluate the UN's claim.
 
 # **Works Cited:**
 
