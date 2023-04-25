@@ -84,7 +84,7 @@ Total_homicides_and_crime_un |>
 
 **Analysis:**
 
-We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstrates the similar crime patterns in different regions of the world. Futhermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
+We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstrates the similar crime patterns in different regions of the world. Furthermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
 
 ### **R.3 - Global - R\^2**
 
@@ -358,7 +358,7 @@ LACarib_homicides_and_crime_un |>
   theme_bw()
 ```
 
-**Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course aand begun to decrease at a steady rate.
+**Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course and begun to decrease at a steady rate.
 
 #### **Asia**
 
@@ -402,7 +402,7 @@ Europe_homicides_and_crime_un |>
   theme_bw()
 ```
 
-**Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have levelled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
+**Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have leveled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
 
 #### Oceania
 
