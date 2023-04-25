@@ -48,7 +48,164 @@ homicides_and_crime_un$Value <- as.numeric(as.character(homicides_and_crime_un$V
 
 For the data analysis, we intend to utilize visualizations of the regional and global homicide statistics to derive our findings as related to our first question. For the latter half of our question, we will be utilizing a series of regression models to determine the level of correlation between homicides and GDP via their R\^2 values.
 
-#### All Regions, Combined:
+## **Global Homicide Statistics: 2005-2020**
+
+#### Global
+
+```{r}
+#| label: Global
+
+Global_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(Region.Country.Area == "1") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+Global_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims - Global") +
+  theme_bw()
+```
+
+**Analysis:** It seems that globally, there was a increasingly more steep decline in violence on a 5-year basis, supporting our hypothesis.
+
+## **Regional Homicide Statistics: 2005-2020**
+
+#### Africa
+
+```{r}
+#| label: Africa
+
+Africa_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Africa") 
+
+Africa_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Africa") +
+  theme_bw()
+```
+
+**Analysis:** It is evident that Africa experienced a period of decline in regards to homicide in the early 2000s, only to increase beginning in 2010. However, the trend seems to have reversed and the number of homicide victims is declining, albeit at a lower rate.
+
+#### North America
+
+```{r}
+#| label: Northern-America
+
+NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Northern America") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+NAmerica_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in N. America") +
+  theme_bw()
+```
+
+**Analysis:** Homicide victims in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
+
+#### **Latin America**
+
+```{r}
+#| label: LA-And-Caribbean
+
+LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Latin America & the Caribbean") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+LACarib_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Latin America and the Caribbean") +
+  theme_bw()
+```
+
+**Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course and begun to decrease at a steady rate.
+
+#### **Asia**
+
+```{r}
+#| label: Asia
+
+Asia_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Asia") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+Asia_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Asia") +
+  theme_bw()
+```
+
+**Analysis:** While homicide victims in Asia has decreased since the first year the data was recorded, it is evident that the declines have gotten steeper as the years have gone on.
+
+#### Europe
+
+```{r}
+#| label: Europe
+
+Europe_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Europe") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+Europe_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Europe") +
+  theme_bw()
+```
+
+**Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have leveled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
+
+#### Oceania
+
+```{r}
+#| label: Oceania
+
+Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
+  filter(X == "Oceania") |>
+  filter(Series == "Intentional homicide rates per 100,000")
+
+Oceania_homicides_and_crime_un |>
+  ggplot(aes(x = Year, y = Value, group = 1)) +
+  geom_line() +
+  geom_point() + 
+  labs(
+    x = "Year",
+    y = "Homicide Victims Per 100k",
+    title = "Intentional Homicide Victims in Oceania") +
+  theme_bw()
+```
+
+**Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
+
+### All Regions, Combined:
 
 ```{r}
 #| label: regions-combined
@@ -86,7 +243,7 @@ Total_homicides_and_crime_un |>
 
 We chose to include this graph with all these countries in one visual representation, so it is easier to distinguish the different patterns among countries, as there is a consistent scale of reference. For example, homicide victims have decreased in Latin America & the Caribbean but the overall amount of homicide victims is significantly higher than all other regions. Also, near the bottom of the graph, there is a cluster of regions, including Northern America, Oceania, Asia, and Europe. This cluster demonstrates the similar crime patterns in different regions of the world. Furthermore, Africa is seen in the middle of graph, with its homicide rate remaining pretty constant compared to all other regions.
 
-### **R.3 - Global - R\^2**
+## **Global Crime - R\^2**
 
 ```{r}
 # | label: total-gdp-homicides
@@ -113,7 +270,7 @@ modeltotal <- linear_reg() |>
 glance(modeltotal)$r.squared
 ```
 
-### **R.3 - Regional - R\^2**
+### **Regional Crime - R\^2**
 
 #### Africa
 
@@ -270,161 +427,6 @@ modeloceania <- linear_reg() |>
 
 glance(modeloceania)$r.squared
 ```
-
-### **RQ.1 - Global +Regional - Homicide Statistics 2005-2020**
-
-#### Global
-
-```{r}
-#| label: Global
-
-Global_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(Region.Country.Area == "1") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-Global_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims - Global") +
-  theme_bw()
-```
-
-**Analysis:** It seems that globally, there was a increasingly more steep decline in violence on a 5-year basis, supporting our hypothesis.
-
-#### Africa
-
-```{r}
-#| label: Africa
-
-Africa_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Africa") 
-
-Africa_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Africa") +
-  theme_bw()
-```
-
-**Analysis:** It is evident that Africa experienced a period of decline in regards to homicide in the early 2000s, only to increase beginning in 2010. However, the trend seems to have reversed and the number of homicide victims is declining, albeit at a lower rate.
-
-#### North America
-
-```{r}
-#| label: Northern-America
-
-NAmerica_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Northern America") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-NAmerica_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in N. America") +
-  theme_bw()
-```
-
-**Analysis:** Homicide victims in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
-
-#### **Latin America**
-
-```{r}
-#| label: LA-And-Caribbean
-
-LACarib_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Latin America & the Caribbean") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-LACarib_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Latin America and the Caribbean") +
-  theme_bw()
-```
-
-**Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course and begun to decrease at a steady rate.
-
-#### **Asia**
-
-```{r}
-#| label: Asia
-
-Asia_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Asia") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-Asia_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Asia") +
-  theme_bw()
-```
-
-**Analysis:** While homicide victims in Asia has decreased since the first year the data was recorded, it is evident that the declines have gotten steeper as the years have gone on.
-
-#### Europe
-
-```{r}
-#| label: Europe
-
-Europe_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Europe") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-Europe_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Europe") +
-  theme_bw()
-```
-
-**Analysis:** Similar to Asia, Europe has also seen a decrease in their homicide rate; however, the rates of the decline have varied. From 2005 - 2010, there was a steep decline, which seemed to have leveled off from 2010-2015. From 2015 onward, the number of homicide victims seems to have decreased but at a much slower rate.
-
-#### Oceania
-
-```{r}
-#| label: Oceania
-
-Oceania_homicides_and_crime_un <- homicides_and_crime_un |>
-  filter(X == "Oceania") |>
-  filter(Series == "Intentional homicide rates per 100,000")
-
-Oceania_homicides_and_crime_un |>
-  ggplot(aes(x = Year, y = Value, group = 1)) +
-  geom_line() +
-  geom_point() + 
-  labs(
-    x = "Year",
-    y = "Homicide Victims Per 100k",
-    title = "Intentional Homicide Victims in Oceania") +
-  theme_bw()
-```
-
-**Analysis:** Oceania saw a decline in the homicide rates from 2005-2010, which seemed to level off from 2010-2015, but the homicide victims have increased since 2015. However, rates overall are low so these changes aren't as drastic as they appear.
 
 # **Results:**
 
