@@ -117,7 +117,7 @@ NAmerica_homicides_and_crime_un |>
 
 **Analysis:** Homicide victims in North America decreased from 2005-2010; however, since 2010, there has been an increase. From 2015-2022, homicide rates increased at a steeper rate and reached new highs.
 
-#### **Latin America**
+#### Latin America
 
 ```{r}
 #| label: LA-And-Caribbean
@@ -139,7 +139,7 @@ LACarib_homicides_and_crime_un |>
 
 **Analysis:** In Latin America, the number of homicide victims did increase up until 2010. Since 2010, the rate has reversed its course and begun to decrease at a steady rate.
 
-#### **Asia**
+#### Asia
 
 ```{r}
 #| label: Asia
