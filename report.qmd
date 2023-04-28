@@ -451,7 +451,8 @@ Based on our initial findings, **our hypothesis is supported** by the UN data. T
 Overall, based on our initial findings, **there is mixed correlation between GDP and homicides.** The global homicide and GDP statistics had a very high R\^2 value (0.93). Breaking the statistics down regionally, we find that Asian and European statistics have high R\^2 values, African and Latin American statistics have middling R\^2 values, and Oceanian and North American statistics have very low R\^2 values. The numeric values are visible in the table above. These results **call into question** the application of the UN's claim that GDP and violent crime are correlated, but we do lack the full scope of the data needed to fully evaluate the claim, such as yearly crime and GDP statistics. Thus, we cannot definitely evaluate the UN's claim.
 
 # **Implications for Future Research:**
-To expand upon our current research question and to address it's limitations, we suggest that future research target more specific regions. Our current question generalizes large regions without accounting for country difference within them. Furthermore, it would be beneficial to identify specific factors that contribute to increases in homicides because these may vary within and across regions. 
+
+To expand upon our current research question and to address it's limitations, we suggest that future research target more specific regions. Our current question generalizes large regions without accounting for country difference within them. Furthermore, it would be beneficial to identify specific factors that contribute to increases in homicides because these may vary within and across regions.
 
 # **Works Cited:**
 
